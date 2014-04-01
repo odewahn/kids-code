@@ -1,0 +1,36 @@
+{
+  "branch": "master",
+  "files": [
+    "01---Introduction-(for-kids).asciidoc",
+    "02---Introduction-(for-parents).asciidoc",
+    "03---Let's-get-started!.asciidoc",
+    "04.0---The-basics.asciidoc",
+    "04.1--Running-code-sometimes.asciidoc",
+    "05---Loops.asciidoc",
+    "06---Input-and-output.asciidoc",
+    "07---Project:-Number-guessing-game.asciidoc",
+    "08.0---Dictionaries-and-lists.asciidoc"
+  ],
+  "formats": {
+    "pdf": {
+      "version": false,
+      "index": false,
+      "toc": false
+    },
+    "epub": {
+      "index": false,
+      "toc": false,
+      "epubcheck": false
+    },
+    "mobi": {
+      "index": false,
+      "toc": false
+    },
+    "html": {
+      "index": false,
+      "toc": false
+    }
+  },
+  "theme": "",
+  "title": "kids code"
+}

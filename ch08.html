@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>kids code</title>
+
+    <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+   <script type="text/javascript" src="theme/html/javascripts/disqus.js"> </script>
+
+
+   <link href="theme/html/stylesheets/book.css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="theme/html/stylesheets/codemirror.css" media="all" rel="stylesheet" type="text/css"/>
+
+   <script src="theme/html/javascripts/codemirror.js"> </script>
+   <script src="theme/html/javascripts/coderunner.js"> </script>
+   <script src="theme/html/javascripts/jsrepl/jsrepl.js" id="jsrepl-script"> </script>
+
+   <link rel="stylesheet" href="theme/html/stylesheets/atlas.css"/>
+
+
+  </head>
+
+  <body data-type="book">
+
+    <div class="navbar navbar-fixed-top" role="navigation">	
+      <div class="container">
+        <div class="navbar-header">	
+	  <img class="logo" src="theme/html/assets/logo-white.svg"/>
+          <a class="title" href="#">kids code</a>
+        </div>
+
+	<div id="slideout">
+	    <span class="toc-control fa fa-bars"/>
+	    <div id="slideout_inner">
+		 <div class="input-group">
+	            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term"/>
+	            <div class="input-group-btn">
+	               <button class="btn btn-default search-button" type="submit"><span class="fa fa-search"/></button>
+	            </div>
+	         </div>   
+	        <h2>Contents</h2>
+	        <nav data-type="toc" id="idp77040"/>
+	    </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <section data-type="chapter" data-pdf-bookmark="Chapter 8. Project: Number guessing game" id="_project_number_guessing_game">
+<h1>Project: Number guessing game</h1>
+
+
+<p>Finally, you have enough coding knowledge to write a simple game! Because this is our first project, let’s go over how this is going to work.</p>
+
+<p>First, I’m going to lay out a plan for you. This plan will include everything our game needs to have in it. Once you read over the plan, you may already have an idea of what the code should look like. If you want to start coding, go right ahead.</p>
+
+<p>If you’re still a little uneasy, though, feel free to move to the next section. There, we’ll have some code for you to work with. It works, so try to play around with it and understand how it’s doing what it’s doing.</p>
+
+<p>Once we have the basic game, I’ll make some suggestions on what you should try adding. Feel free to add whatever you want, or add your own twist to the game.</p>
+
+<p>Finally, I’ll show you my finished code. The final code will have all of the additions that I suggested along the way.</p>
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="What you need to know…" id="_what_you_need_to_know">
+<h1>What you need to know…</h1>
+
+<p>You should be familiar with everything we’ve gone over until now, but you should be especially comfortable with:</p>
+<ul>
+<li>
+<p>Testing for equality</p>
+</li>
+<li>
+<p>Loops</p>
+</li>
+<li>
+<p><code>if</code> statements</p>
+</li>
+<li>
+<p>Getting input from the user</p>
+</li>
+<li>
+<p>Converting strings into integers</p>
+</li>
+</ul>
+
+<p>If you’re fuzzy on any of these topics, go back and check out their review videos.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="A note for the mentor" id="_a_note_for_the_mentor">
+<h1>A note for the mentor</h1>
+
+<p>You’ve made it to the first project! You also might get to witness your first crisis of confidence in your student. Even a student who has effortlessly raced through each of the previous lesson’s examples might stumble the first time they have to put everything together. Don’t worry! This is common, and students become more confident as they go further in the book.</p>
+
+<p>Guessing games are great for adding personal twists, so once we’re done with the main requirements, feel free to help you student brainstorm ways to make the game even more interesting.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="The plan!" id="_the_plan">
+<h1>The plan!</h1>
+
+<p>We’re going to make a two person guessing game. The first player will type in a number for the second person to guess. If the second person guesses right, then they win! Otherwise, they lose.</p>
+
+<p>Because we’re using two people, we have to make sure that the number the first player enters isn’t seen by the second player. A bunch of print statments should push that off the screen, though.</p>
+
+<p>Here are the components that you’ll have to use to make the basic game:</p>
+<ul>
+<li>
+<p><code>input()</code> or <code>raw_input()</code></p>
+</li>
+<li>
+<p>An <code>if</code> statement</p>
+</li>
+<li>
+<p>Some sort of comparison</p>
+</li>
+<li>
+<p><code>print</code></p>
+</li>
+</ul>
+
+<p>Once you have your game running, make sure to run it at least twice: Once, where Player One guesses the number, and once where they don’t.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="The basic game" id="_the_basic_game">
+<h1>The basic game</h1>
+
+<p>This is probably the most simple guessing game you can make. Two people and exactly one guess. Here’s what the code looks like:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">secret_num</code> <code class="o">=</code> <code class="nb">input</code><code class="p">(</code><code class="s">"Player One, give me a number: "</code><code class="p">)</code>
+
+<code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">100</code><code class="p">):</code>
+    <code class="k">print</code> <code class="s">"Don't look, Player Two!"</code>
+
+<code class="n">guess</code> <code class="o">=</code> <code class="nb">input</code><code class="p">(</code><code class="s">"Player Two, what's your guess? "</code><code class="p">)</code>
+
+<code class="k">if</code> <code class="n">guess</code> <code class="o">==</code> <code class="n">secret_num</code><code class="p">:</code>
+    <code class="k">print</code> <code class="s">"You got it!"</code>
+<code class="k">else</code><code class="p">:</code>
+    <code class="k">print</code> <code class="s">"Sorry, you lose."</code></pre>
+
+
+<p>Basically, this code is:</p>
+<ul>
+<li>
+<p>Getting a secret number from Player One</p>
+</li>
+<li>
+<p>Printing out a <strong>bunch</strong> of text to push that number off of the screen</p>
+</li>
+<li>
+<p>Getting a guess from Player Two</p>
+</li>
+<li>
+<p>Checking to see if the guess is equal to the secret number, and printing out a win / lose message</p>
+</li>
+</ul>
+
+<p>This program is <em>okay</em>, but it’s not very exciting. Let’s add some more features!</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Try adding…" id="_try_adding">
+<h2>Try adding…</h2>
+
+<p>Here are some features you might want to add. You can add one, or you can add them all! Just make sure that you add them <em>one at a time</em>. It can be easy to get over-enthusiastic and add a bunch of stuff at once. However, it’s a good idea to run your program each time you add something new. That way, if you get an error, or your program doesn’t work as expected, you only have to look at few lines of code rather than dozens of lines.</p>
+
+<p>Suggested features:</p>
+<ul>
+<li>
+<p>Allow Player Two to guess more than once.</p>
+</li>
+<li>
+<p>Allow the players to play another game once the game is over</p>
+</li>
+<li>
+<p>Make sure that the number to guess isn’t bigger than ten</p>
+</li>
+<li>
+<p>Give Player Two hints (like saying that the secret number is bigger or smaller than their guess)</p>
+</li>
+<li>
+<p>Use <code>raw_input()</code> to make guessing a bit safer.</p>
+</li>
+</ul>
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="The finished game" id="_the_finished_game">
+<h1>The finished game</h1>
+
+<p>Here’s my finished game, that builds off of the basic game and incorporates all of the suggested features.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">max_num</code> <code class="o">=</code> <code class="mi">10</code>
+
+<code class="n">continue_game</code> <code class="o">=</code> <code class="s">"Y"</code>
+
+<code class="k">while</code> <code class="n">continue_game</code> <code class="o">==</code> <code class="s">"Y"</code><code class="p">:</code>
+    <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
+        <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player One, give me a number: "</code><code class="p">)</code>
+        <code class="k">try</code><code class="p">:</code>
+            <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">secret_num</code><code class="p">)</code>
+        <code class="k">except</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code>
+
+        <code class="k">if</code> <code class="n">secret_num</code> <code class="o">&gt;</code> <code class="n">max_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Sorry, the number needs to be less than"</code><code class="p">,</code> <code class="n">max_num</code>
+        <code class="k">else</code><code class="p">:</code>
+            <code class="k">break</code>
+
+    <code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">100</code><code class="p">):</code>
+        <code class="k">print</code> <code class="s">"Don't look, Player Two!"</code>
+
+    <code class="n">guess</code> <code class="o">=</code> <code class="s">""</code>
+
+    <code class="k">while</code> <code class="n">guess</code> <code class="o">!=</code> <code class="n">secret_num</code><code class="p">:</code>
+        <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
+            <code class="n">guess</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player Two, what's your guess? "</code><code class="p">)</code>
+            <code class="k">try</code><code class="p">:</code>
+                <code class="n">guess</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">guess</code><code class="p">)</code>
+                <code class="k">break</code>
+            <code class="k">except</code><code class="p">:</code>
+                <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code>
+
+        <code class="k">if</code> <code class="n">guess</code> <code class="o">==</code> <code class="n">secret_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"You got it!"</code>
+        <code class="k">elif</code> <code class="n">guess</code> <code class="o">&gt;</code> <code class="n">secret_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Hmm, that's too big..."</code>
+        <code class="k">else</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Nope, that's too small."</code>
+
+    <code class="n">c</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Want another game [Y/N]?"</code><code class="p">)</code></pre>
+
+
+<p>Let’s go over what each chunk is doing. First, we set up some variables: The largest the secret number can be, and a variable that we’ll be using with the main loop of the game.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">max_num</code> <code class="o">=</code> <code class="mi">10</code>
+
+<code class="n">continue_game</code> <code class="o">=</code> <code class="s">"Y"</code></pre>
+
+
+<p>Next, we start the game. Our first goal is to get a good number to guess! We make Player One enter numbers until we get an integer that’s less than ten.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">while</code> <code class="n">continue_game</code> <code class="o">==</code> <code class="s">"Y"</code><code class="p">:</code>
+    <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
+        <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player One, give me a number: "</code><code class="p">)</code>
+        <code class="k">try</code><code class="p">:</code>
+            <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">secret_num</code><code class="p">)</code>
+        <code class="k">except</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code>
+
+        <code class="k">if</code> <code class="n">secret_num</code> <code class="o">&gt;</code> <code class="n">max_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Sorry, the number needs to be less than"</code><code class="p">,</code> <code class="n">max_num</code>
+        <code class="k">else</code><code class="p">:</code>
+            <code class="k">break</code></pre>
+
+
+<p>Next, we spew out those print statements to push our secret number off the screen.</p>
+
+
+<pre data-type="programlisting" data-code-language="python">    <code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">100</code><code class="p">):</code>
+        <code class="k">print</code> <code class="s">"Don't look, Player Two!"</code></pre>
+
+
+<p>Now it’s time for Player Two to guess Player One’s number. First, we set up <code>guess</code> to hold an empty string, so <code>guess != secret_num</code> will work properly (if we don’t set up <code>guess</code>, Python will give us an error).</p>
+
+<p>We need to get a good number out of Player Two, so once again, we keep asking Player Two for numbers until they give us an integer.</p>
+
+
+<pre data-type="programlisting" data-code-language="python">    <code class="n">guess</code> <code class="o">=</code> <code class="s">""</code>
+
+    <code class="k">while</code> <code class="n">guess</code> <code class="o">!=</code> <code class="n">secret_num</code><code class="p">:</code>
+        <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
+            <code class="n">guess</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player Two, what's your guess? "</code><code class="p">)</code>
+            <code class="k">try</code><code class="p">:</code>
+                <code class="n">guess</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">guess</code><code class="p">)</code>
+                <code class="k">break</code>
+            <code class="k">except</code><code class="p">:</code>
+                <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code></pre>
+
+
+<p>Once we get a good number, it’s time to see if the two numbers are the same, or if Player Two’s number was too big or too small. If the guess isn’t the same as the secret number, we’ll go back to <code>while guess != secret_num:</code> and get another number out of Player Two.</p>
+
+
+<pre data-type="programlisting" data-code-language="python">        <code class="k">if</code> <code class="n">guess</code> <code class="o">==</code> <code class="n">secret_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"You got it!"</code>
+        <code class="k">elif</code> <code class="n">guess</code> <code class="o">&gt;</code> <code class="n">secret_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Hmm, that's too big..."</code>
+        <code class="k">else</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Nope, that's too small."</code></pre>
+
+
+<p>Finally, if Player Two <em>does</em> guess the secret number, we ask if they want to play again. If they enter a capital <em>Y</em>, then we start the game over. If they enter anything else, the game ends.</p>
+
+
+<pre data-type="programlisting" data-code-language="python">    <code class="n">c</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Want another game [Y/N]?"</code><code class="p">)</code></pre>
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="My code doesn’t look like that!" id="_my_code_doesn_t_look_like_that">
+<h2>My code doesn’t look like that!</h2>
+
+<p>That’s okay! Your code should <em>work</em> the same. Coding isn’t like doing math, where there’s a limited number of ways to get to the right answer. If you have five developers code the same program, they’ll often do it five different ways.</p>
+
+<p>What’s more important is to understand <em>why</em> my code looks different. Did I do something that was simpler, or did I check for something that you forgot about (like bad input)? Did I simply do something different? Reading other people’s code is a great way to learn tricks that makes your code easier to read, maintain, and run!</p>
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+</section>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container">
+	<div class="row">
+	  <div class="pagination">
+	      <ul>
+	        <li class="prev"><span class="fa fa-chevron-left"/> <a href="ch07.html">Previous</a></li>
+	        <li class="next"><a href="ch09.html">Next</a> <span class="fa fa-chevron-right"/></li>
+	      </ul>
+	  </div>       
+	</div>
+    </div>
+
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12 disqus">
+	     <div id="disqus_thread"/>
+	   </div>
+       </div>
+    </div>
+ 
+    <div class="footer">
+      <footer>
+        <p>© O'Reilly Media, 2014</p>
+      </footer>
+    </div>
+
+  </body>
+
+</html>

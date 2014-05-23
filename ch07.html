@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>kids code</title>
+
+    <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+   <script type="text/javascript" src="theme/html/javascripts/disqus.js"> </script>
+
+
+   <link href="theme/html/stylesheets/book.css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="theme/html/stylesheets/codemirror.css" media="all" rel="stylesheet" type="text/css"/>
+
+   <script src="theme/html/javascripts/codemirror.js"> </script>
+   <script src="theme/html/javascripts/coderunner.js"> </script>
+   <script src="theme/html/javascripts/jsrepl/jsrepl.js" id="jsrepl-script"> </script>
+
+   <link rel="stylesheet" href="theme/html/stylesheets/atlas.css"/>
+
+
+  </head>
+
+  <body data-type="book">
+
+    <div class="navbar navbar-fixed-top" role="navigation">	
+      <div class="container">
+        <div class="navbar-header">	
+	  <img class="logo" src="theme/html/assets/logo-white.svg"/>
+          <a class="title" href="#">kids code</a>
+        </div>
+
+	<div id="slideout">
+	    <span class="toc-control fa fa-bars"/>
+	    <div id="slideout_inner">
+		 <div class="input-group">
+	            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term"/>
+	            <div class="input-group-btn">
+	               <button class="btn btn-default search-button" type="submit"><span class="fa fa-search"/></button>
+	            </div>
+	         </div>   
+	        <h2>Contents</h2>
+	        <nav data-type="toc" id="idp77040"/>
+	    </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <section data-type="chapter" data-pdf-bookmark="Chapter 7. Getting and showing information" id="_getting_and_showing_information">
+<h1>Getting and showing information</h1>
+
+
+<p>So far, we’ve got Python doing quite a bit! We have it running code multiple times, doing math, and storing information for us. In this chapter, we’re going to go over two things that can really make your programs sing: getting information from the user and making what’s printed out look nicer.</p>
+
+<p>Until a human can use our program, it’s not very useful. After all, how fun would a game be that didn’t let you actually control anything? How easy would the game be to play if we couldn’t organize the information on the screen?</p>
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="What you need for this chapter" id="_what_you_need_for_this_chapter">
+<h1>What you need for this chapter</h1>
+
+<p>For this chapter, you should be familiar with the basic data types (integers, strings, and floats), and you should be comfortable with <code>while</code> loops and <code>if</code> statements. If you need a refresher, go check out the summary videos for those sections!</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Notes to the mentor" id="_notes_to_the_mentor">
+<h1>Notes to the mentor</h1>
+
+<p>Okay, things are going to start taking off in this chapter. Something about accepting input tends to make programs really come to life. Before now, the code we’ve written hasn’t been very interactive. Now that we can take in input from a user, we can set up our programs to be more of a framework that can be used over and over again.</p>
+
+<p>We’re also going to go over formating text, which is less important in the long run, but in the short run, it can make their programs look nicer. Don’t underestimate the pride a student might take in having really nicely formatted screens. In fact, if they decide to take their time, making sure that their data looks nice, let them! We need more developers that care about the front-end!</p>
+
+<p>Finally, I’m sneaking <code>try</code> and <code>except</code> into this lesson. If you’re familiar with exceptions in Python (and most other modern languages!) you know that having naked exception is a bad thing. Catching only certain kinds of errors tend to confuse new coders, though, so I save that for when we start talking about debugging later on. By then, they’ll be ready to start talking about all the different kinds of exceptions we can catch!</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Input? Output?" id="_input_output">
+<h1>Input? Output?</h1>
+
+<p>We’re going to be talking about input and output during this lesson, so it’s very important that you understand what those two words mean.</p>
+
+<p><strong>Input</strong> is the information that goes <em>into</em> your program. A user might enter it. It might come from another program that’s running elsewhere (like a website). It might even come from a device, like a camera!</p>
+
+<p><strong>Output</strong> is what your program displays somehow. It might show something on a screen, or it might pass some information to another program. When you use a <code>print</code> statement to print something to your screen, your program is creating output.</p>
+
+<p>First, let’s talk about output, and how we can make it look nice.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Showing information" id="_showing_information">
+<h1>Showing information</h1>
+
+<p>Making what your computer prints out look nice isn’t just about having a pretty program. Organized output is easier to use, and makes it less likely that your user will make mistakes. Think about how hard it would be to use a website where all the information was randomly thrown together. Even a simple page like search results is easier to use when the results are grouped together in a sensible way.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="The print statement" id="_the_print_statement">
+<h2>The print statement</h2>
+
+<p>We’ve already been using the <code>print</code> statement quite a bit, but we haven’t really talked about what it does. You can guess, thought, right? <code>print</code> tells Python to print some information to the screen.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="k">print</code> <code class="s">"Hello"</code>
+<code class="n">Hello</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="k">print</code> <code class="s">"Hello"</code><code class="p">,</code> <code class="mi">5</code>
+<code class="n">Hello</code> <code class="mi">5</code></pre>
+
+
+<p>So far, we’ve been using <code>print</code> to display one line of information, and we haven’t done much to format it. Let’s make <code>print</code> work a bit harder for us.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Formatting and non-printing characters" id="_formatting_and_non_printing_characters">
+<h2>Formatting and non-printing characters</h2>
+
+<p>In Python, we can insert <strong>non-printing characters</strong> into a string. These characters tell Python how to format the text when it’s printed. They’re called non-printing characters because they don’t show up like normal characters (for example, “a”, “5”, or “!”).</p>
+
+<p>To add a non-printing character to your string, you use a backslash (\). On your keyboard, that key is usually at the end of the first row of letters. We call this character an <strong>escape</strong>. Using it clues Python in that we want it to do something special.</p>
+
+<p>Escapes are paired with another character (usually a letter) that tell Python exactly what you want to do. Let’s insert some tabs into a string by inserting <code>\t</code> into a string.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">my_text</code> <code class="o">=</code> <code class="s">"One</code><code class="se">\t</code><code class="s">Two</code><code class="se">\t</code><code class="s">Three"</code>
+<code class="k">print</code> <code class="n">my_text</code></pre>
+
+
+<p>Look at what was printed out. Instead of printing out “One\tTwo\tThree”, Python printed out “One    Two    Three”. Python inserted a tab anywhere where we had a <code>\t</code>.</p>
+
+<p>You can also add a line break to a string by inserting <code>\n</code> to a string. Run the following code, and note where Python moves to a new line:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">poem</code> <code class="o">=</code> <code class="s">"Twinkle, twinkle little star</code><code class="se">\n</code><code class="s">How I wonder what you are"</code>
+<code class="k">print</code> <code class="n">poem</code></pre>
+
+
+<p>Because we had a <code>\n</code> character in our string, Python knew to move to a new line. Our output should look like this:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">Twinkle</code><code class="p">,</code> <code class="n">twinkle</code> <code class="n">little</code> <code class="n">star</code>
+<code class="n">How</code> <code class="n">I</code> <code class="n">wonder</code> <code class="n">what</code> <code class="n">you</code> <code class="n">are</code></pre>
+
+<div data-type="note">
+
+Yes, I know that <code>\n</code> looks like two characters to us. To Python, though, it’s just one character. It’s easier to type out <code>\n</code> than it is to insert a character that’s not on our keyboard.
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Not moving to a new line" id="_not_moving_to_a_new_line">
+<h2>Not moving to a new line</h2>
+
+<p>Another trick you can do with the print statement is adding a comma to the end of the line. This tells Python <strong>not</strong> to move to the next line.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">print</code> <code class="s">"Hello"</code><code class="p">,</code>
+<code class="k">print</code> <code class="s">"World"</code></pre>
+
+
+<p>Why would you want to do this? Sometimes, you need to print out one thing, then do a bunch of calculations and print out something else. Maybe you need to get some information from a website (we’ll do that later!), or maybe you just need to do some math. I often use this feature if I’m running through a <code>for</code> or <code>while</code> loop, and want everything to print out onto one line.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code> <code class="mi">11</code><code class="p">):</code>
+        <code class="k">print</code> <code class="n">i</code><code class="p">,</code>
+<code class="mi">1</code> <code class="mi">2</code> <code class="mi">3</code> <code class="mi">4</code> <code class="mi">5</code> <code class="mi">6</code> <code class="mi">7</code> <code class="mi">8</code> <code class="mi">9</code> <code class="mi">10</code></pre>
+
+
+<p>Had we not added that comma, each number would have been printed on its own line.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Inserting values" id="_inserting_values">
+<h2>Inserting values</h2>
+
+<p>So far, when we’ve wanted to combine several values and a print statement, we’ve used commas or plus signs.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="k">print</code> <code class="s">"Hello"</code><code class="p">,</code> <code class="mi">5</code>
+<code class="n">Hello</code> <code class="mi">5</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="k">print</code> <code class="s">"Hello"</code><code class="p">,</code> <code class="s">"person"</code>
+<code class="n">Hello</code> <code class="n">person</code></pre>
+
+
+<p>That’s okay if we’re printing out something simple, but what if we wanted to print out something more complicated? Let’s say we wanted to print out someone’s name, age, and grade? We might do something like this:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">name</code> <code class="o">=</code> <code class="s">"Kendra"</code>
+<code class="n">grade</code> <code class="o">=</code> <code class="mi">6</code>
+<code class="n">age</code> <code class="o">=</code> <code class="mi">11</code>
+
+<code class="k">print</code> <code class="s">"Hello,"</code> <code class="n">name</code><code class="p">,</code> <code class="s">". I see you're in grade"</code><code class="p">,</code> <code class="mi">6</code><code class="p">,</code> <code class="s">"and that you're"</code><code class="p">,</code> <code class="n">age</code><code class="p">,</code> <code class="s">"years old."</code></pre>
+
+
+<p>That’s <em>okay</em>, but Python has a way to insert values into strings that’s much easier to use. We can use curly brackets ({}) to tell Python where we want to insert information into a string.</p>
+<div data-type="note">
+
+Curly brackets are generally at the end of the first row of letters on your keyboard, above the square brackets.
+
+</div>
+
+<p>There’s a few ways to use the curly brackets. The easiest is to just put them in the string where you want your value inserted, then use <code>format</code> to tell Python what values you want inserted.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="n">my_string</code> <code class="o">=</code> <code class="s">"Hello, {}, how are you?"</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="n">name</code> <code class="o">=</code> <code class="s">"Ahmed"</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="k">print</code> <code class="n">my_string</code><code class="o">.</code><code class="n">format</code><code class="p">(</code><code class="n">name</code><code class="p">)</code>
+<code class="n">Hello</code><code class="p">,</code> <code class="n">Ahmed</code><code class="p">,</code> <code class="n">how</code> <code class="n">are</code> <code class="n">you</code><code class="err">?</code></pre>
+
+
+<p>That’s much easier to read than a string that’s full of commas or plus signs, right? Even better, you can reuse it! We call strings with curly brackets in them <strong>templates</strong>. Here, we use a template over and over again.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="n">my_template</code> <code class="o">=</code> <code class="s">"It is {} in the morning."</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="k">for</code> <code class="n">time</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code> <code class="mi">3</code><code class="p">:</code>
+        <code class="k">print</code> <code class="n">my_template</code><code class="o">.</code><code class="n">format</code><code class="p">(</code><code class="n">name</code><code class="p">)</code>
+<code class="n">It</code> <code class="ow">is</code> <code class="mi">1</code> <code class="ow">in</code> <code class="n">the</code> <code class="n">morning</code><code class="o">.</code>
+<code class="n">It</code> <code class="ow">is</code> <code class="mi">2</code> <code class="ow">in</code> <code class="n">the</code> <code class="n">morning</code><code class="o">.</code>
+<code class="n">It</code> <code class="ow">is</code> <code class="mi">3</code> <code class="ow">in</code> <code class="n">the</code> <code class="n">morning</code><code class="o">.</code></pre>
+
+
+<p>This is great if you only have one thing to insert. What if you have a really complicated string? You might start getting confused. That’s when it’s useful to use a <strong>keyword</strong> with your template. You can put some text in the curly braces, then use that when you format to string to say exactly what goes where. That text is your keyword.</p>
+
+<p>For example, let’s look at our earlier string. We want to insert someone’s name, age, and grade level into a string. This is a great place to use keywords!</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="n">my_name</code> <code class="o">=</code> <code class="s">"Alice"</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="n">my_grade</code> <code class="o">=</code> <code class="mi">6</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="n">my_age</code> <code class="o">=</code> <code class="mi">11</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="n">my_template</code> <code class="o">=</code> <code class="s">"Hello, {name}! I see you're in grade {grade}, and you're {age} years old!"</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="k">print</code> <code class="n">my_template</code><code class="o">.</code><code class="n">format</code><code class="p">(</code><code class="n">name</code><code class="o">=</code><code class="n">my_name</code><code class="p">,</code> <code class="n">grade</code><code class="o">=</code><code class="n">my_grade</code><code class="p">,</code> <code class="n">age</code><code class="o">=</code><code class="n">my_age</code><code class="p">)</code>
+<code class="n">Hello</code><code class="p">,</code> <code class="n">Alice</code><code class="err">!</code> <code class="n">I</code> <code class="n">see</code> <code class="n">you</code><code class="s">'re in grade 6, and you'</code><code class="n">re</code> <code class="mi">11</code> <code class="n">years</code> <code class="n">old</code><code class="err">!</code></pre>
+
+
+<p>This time, we used a keyword in each curly bracket, which makes it much easier to see which value is going where. The value in my_name is going to fill the <code>name</code> slot, <code>my_grade</code> is going into the <code>grade</code> slot, and <code>my_age</code> is going to go into the <code>age</code> slot.</p>
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Getting information" id="_getting_information">
+<h1>Getting information</h1>
+
+<p>Now that we know all kinds of ways to format information when it’s printed to the screen, let’s talk about how to get information from the user.</p>
+
+<p>The most basic way to get information from whoever is using your program is by using <code>input()</code> and <code>raw_input()</code>. Let’s start with <code>input()</code>.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Getting numbers" id="_getting_numbers">
+<h2>Getting numbers</h2>
+
+<p>We can use <code>input()</code> to get numbers from our user. Try running this code, entering your age when Python seems to be waiting for something to happen.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">print</code> <code class="s">"How old are you?"</code>
+<code class="n">age</code> <code class="o">=</code> <code class="nb">input</code><code class="p">()</code>
+<code class="k">print</code> <code class="s">"You are"</code><code class="p">,</code> <code class="n">age</code><code class="p">,</code> <code class="s">"years old!"</code></pre>
+
+
+<p>What happened? Python sat there and waited for you to type something, didn’t it? Once you typed in your age, Python then printed out how old you are.</p>
+
+<p>If Python gave you an error, then you probaby entered something that wasn’t a number. That’s because <code>input()</code> can only accept numbers. But what if you wanted to get text? That’s when you use <code>raw_input()</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Getting text" id="_getting_text">
+<h2>Getting text</h2>
+
+<p>If you use <code>raw_input()</code>, then whatever the user enters will be saved in a string. This is a <strong>much</strong> safer option, because it’s harder to break. In general, I only use <code>input()</code> when I know that I’ll be the only person using the program. I trust me! I don’t trust anyone else.</p>
+
+<p>Let’s look at <code>raw_input</code> in action.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">print</code> <code class="s">"What is your name?"</code>
+<code class="n">name</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">()</code>
+<code class="k">print</code> <code class="nb">type</code><code class="p">(</code><code class="n">name</code><code class="p">)</code>
+<code class="k">print</code> <code class="s">"Give me a number:"</code>
+<code class="n">num</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">()</code>
+<code class="k">print</code> <code class="nb">type</code><code class="p">(</code><code class="n">num</code><code class="p">)</code></pre>
+
+
+<p>Note that even when you gave <code>raw_input()</code> a number, Python saved it as a string. Let’s use <code>raw_input()</code> to get the users age.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">print</code> <code class="s">"How old are you?"</code>
+<code class="n">age</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">()</code>
+<code class="k">print</code> <code class="s">"You are"</code><code class="p">,</code> <code class="n">age</code><code class="p">,</code> <code class="s">"years old!"</code></pre>
+
+
+<p>It worked just like before, but this time, if you enter <em>eleven</em> instead of <em>11</em>, you won’t get an error!</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Add a prompt" id="_add_a_prompt">
+<h2>Add a prompt</h2>
+
+<p>So far, we’ve been printing out a line of text, then getting the user input. We can combine those two lines, however, by adding a prompt to <code>input()</code> or <code>raw_input()</code>.</p>
+
+<p>To add a prompt, put a string in the parenthesis after <code>input()</code> or <code>raw_input()</code>. It looks something like this:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">name</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"What is your name? "</code><code class="p">)</code>
+<code class="k">print</code> <code class="s">"Hi,"</code> <code class="n">name</code></pre>
+
+
+<p>This time, rather than getting the input on the next line, we get it on the same line. This looks much nicer, and makes our code a bit easier to maintain. We don’t have to worry about keeping those two lines together anymore.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Converting text to numbers" id="_converting_text_to_numbers">
+<h2>Converting text to numbers</h2>
+
+<p>Using <code>raw_input()</code> is safer than using <code>input()</code>, but what if we need a number? In that case, I usually <strong>convert</strong> the string into a number. To do that, we use <code>float()</code> or <code>int()</code>.</p>
+
+<p><code>float()</code> and <code>int()</code> will take a string and try to convert it into a number. <code>float()</code> will convert it into a float (a decimal number), and <code>int()</code> will convert it into an integer (a whole number). Let’s use <code>int()</code> to convert the user’s age to a integer.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">age</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"How old are you?"</code><code class="p">)</code>
+<code class="n">age</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">age</code><code class="p">)</code>
+<code class="k">print</code> <code class="s">"In five years, you will be"</code><code class="p">,</code> <code class="n">age</code> <code class="o">+</code> <code class="mi">5</code></pre>
+
+
+<p>One problem with <code>int()</code> and <code>float()</code>, though, is that if you try to convert something that <em>isn’t</em> a number, you’ll get an error. Run this code, and watch what happens.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">age</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="s">"five"</code><code class="p">)</code></pre>
+
+
+<p>This is one of the downsides to allowing users to give you input. Sure, your program is way more interactive now, but now the user can break it!</p>
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Getting good information from the user" id="_getting_good_information_from_the_user">
+<h1>Getting good information from the user</h1>
+
+<p>Once you start accepting information from the user, you should also start figuring out how to make sure what they give you is good. Unless you’re the only user, you should never trust random input!</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="try / except" id="_try_except">
+<h2>try / except</h2>
+
+<p>One good way to sidestep input that might give you an error is to use <code>try / except</code>. A <code>try / except</code> statement looks a bit like an <code>if / else</code> statement:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">try</code><code class="p">:</code>
+    <code class="n">code</code>
+    <code class="n">code</code>
+    <code class="n">code</code>
+<code class="k">except</code><code class="p">:</code>
+    <code class="n">code</code>
+    <code class="n">code</code>
+    <code class="n">code</code></pre>
+
+
+<p>With a <code>try / except</code>, Python will run all the code in the <code>try</code> block. If it gets an error, Python will skip to the <code>except</code> block and run that code. If there are no errors, Python will skip the <code>except</code> block.</p>
+
+<p>Try running this code, and note what is printed out.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">try</code><code class="p">:</code>
+    <code class="n">age</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="s">"five"</code><code class="p">)</code>
+    <code class="k">print</code> <code class="n">age</code> <code class="o">+</code> <code class="mi">5</code>
+<code class="k">except</code><code class="p">:</code>
+    <code class="k">print</code> <code class="s">"I'm sorry, there was some kind of error"</code></pre>
+
+
+<p>Python printed out a nice message instead of a nasty error, didn’t it? Change “five” to “5” and re-run the code. What happens?</p>
+
+<p>This time, because there wasn’t an error, Python printed out ten and didn’t bother with an error.</p>
+<div data-type="note">
+
+Unlike an <code>if</code> statement, the <code>except</code> is mandatory! If you don’t want to do anything, just use the <code>pass</code> keyword to tell Python to keep on going.
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Make sure you get good information" id="_make_sure_you_get_good_information">
+<h2>Make sure you get good information</h2>
+
+<p><code>try / except</code> is great because you don’t get errors due to user input anymore, but you still don’t have input that will work! Combining a <code>try / except</code> with a <code>while</code> loop can help make sure that we have good data to work with.</p>
+
+<p>If we want to make sure we get the users age, then we can put the <code>try / except</code> statement inside a while loop, and keep going until we get an age we can convert into an integer. First, run the code and try to enter in some bad values before you enter in a good value.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
+    <code class="n">age</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Age? "</code><code class="p">)</code>
+    <code class="k">try</code><code class="p">:</code>
+        <code class="n">age</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">age</code><code class="p">)</code>
+        <code class="k">break</code>
+    <code class="k">except</code><code class="p">:</code>
+        <code class="k">print</code> <code class="s">"I'm sorry, I don't like that."</code></pre>
+
+
+<p>What’s going on here? Let’s take it line by line.</p>
+
+<p><strong><code>while True:</code></strong> - Wait! Won’t this create an infinite loop?! It will if we don’t have a <code>break</code> statement somewhere. Happily, we do! You’ll see <code>while True:</code> quite a bit when looking at other people’s code, so it’s a good idea to get used to it now!</p>
+
+<p><strong><code>age = raw_input("Age? ")</code></strong> - This is pretty easy. We’re getting the age from the user and storing it in a string.</p>
+
+<p><strong><code>try:</code></strong> - Okay, we’re going to try to do something…</p>
+
+<p><strong><code>age = int(age)</code></strong> - A-ha! This is the code that might break. If the user enters in anything but a whole number, Python will give us an error.</p>
+
+<p><strong><code>break</code></strong> - Here’s our break that guarantees that we won’t get stuck in an infinite loop. This line will only run <em>if</em> we got good input from the user.</p>
+
+<p><strong><code>except:</code></strong> - Here, we start the code that will run if the user gave us a bad value, like a string.</p>
+
+<p><strong><code>print "I'm sorry..."</code></strong> - We print out an error message to be nice, then go back to the top of the while loop. We end up asking for the user’s age again, and we’ll keep doing that until we get some good information from them!</p>
+
+<p>If you use a <code>while</code> loop paired with a <code>try / except</code> statement, then it becomes much harder for your user to break your program!</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Try this!" id="_try_this">
+<h2>Try this!</h2>
+
+<p>Here’s some code that inserts some numbers into a string of text. Can you change the code so that it uses templates and curly brackets?</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">bananas</code> <code class="o">=</code> <code class="mi">5</code>
+<code class="n">oranges</code> <code class="o">=</code> <code class="mi">6</code>
+
+<code class="k">print</code> <code class="s">"You have"</code><code class="p">,</code> <code class="n">bananas</code><code class="p">,</code> <code class="s">"bananas and "</code><code class="p">,</code> <code class="n">oranges</code><code class="p">,</code> <code class="s">"oranges."</code></pre>
+
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+</section>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container">
+	<div class="row">
+	  <div class="pagination">
+	      <ul>
+	        <li class="prev"><span class="fa fa-chevron-left"/> <a href="ch06.html">Previous</a></li>
+	        <li class="next"><a href="ch08.html">Next</a> <span class="fa fa-chevron-right"/></li>
+	      </ul>
+	  </div>       
+	</div>
+    </div>
+
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12 disqus">
+	     <div id="disqus_thread"/>
+	   </div>
+       </div>
+    </div>
+ 
+    <div class="footer">
+      <footer>
+        <p>© O'Reilly Media, 2014</p>
+      </footer>
+    </div>
+
+  </body>
+
+</html>

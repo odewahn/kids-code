@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>kids code</title>
+
+    <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+   <script type="text/javascript" src="theme/html/javascripts/disqus.js"> </script>
+
+
+   <link href="theme/html/stylesheets/book.css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="theme/html/stylesheets/codemirror.css" media="all" rel="stylesheet" type="text/css"/>
+
+   <script src="theme/html/javascripts/codemirror.js"> </script>
+   <script src="theme/html/javascripts/coderunner.js"> </script>
+   <script src="theme/html/javascripts/jsrepl/jsrepl.js" id="jsrepl-script"> </script>
+
+   <link rel="stylesheet" href="theme/html/stylesheets/atlas.css"/>
+
+
+  </head>
+
+  <body data-type="book">
+
+    <div class="navbar navbar-fixed-top" role="navigation">	
+      <div class="container">
+        <div class="navbar-header">	
+	  <img class="logo" src="theme/html/assets/logo-white.svg"/>
+          <a class="title" href="#">kids code</a>
+        </div>
+
+	<div id="slideout">
+	    <span class="toc-control fa fa-bars"/>
+	    <div id="slideout_inner">
+		 <div class="input-group">
+	            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term"/>
+	            <div class="input-group-btn">
+	               <button class="btn btn-default search-button" type="submit"><span class="fa fa-search"/></button>
+	            </div>
+	         </div>   
+	        <h2>Contents</h2>
+	        <nav data-type="toc" id="idp77040"/>
+	    </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <section data-type="chapter" data-pdf-bookmark="Chapter 6. Loops" id="_loops">
+<h1>Loops</h1>
+
+
+<p>So far, we’ve learned how to store information, make Python do what we want, and have Python run certain bits of code only if something is true. Now, it’s time to have Python repeat code!</p>
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="What you need to know…" id="_what_you_need_to_know">
+<h1>What you need to know…</h1>
+
+<p>You should have a good handle on Boolean expressions! If you’re not sure about them, go back read over that section, or check out the review video.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Notes for the grown-up" id="_notes_for_the_grown_up">
+<h1>Notes for the grown-up</h1>
+
+<p>In this lesson, we’re going to be going over loops. Once again, you might have to spend some extra time emphasizing the importance of code blocks and indentation in Python. You also might want to emphasize when you use one type of loop over another type of loop.</p>
+
+<p>For loops often present a special kind of challenge for many students. It might take a few tries for them to understand what a loop variable is. You might notice that were not teaching lists in this lesson. Going to start off by simply using range. If a student seems rather precocious, you might want to give them a brief overview of what a list is. If you need some help with that, check out the review video in the lists chapter.</p>
+
+<p>Be careful not to overwhelm the student. If they’re just getting used to the idea of loops then go ahead and leave lists for later.</p>
+
+<p>As for range, younger students may need help with understanding steps when it comes to playing with range. If they seem confused don’t be shy about moving on. I can count on one hand the number of times I’ve had to give range more than two parameters.</p>
+
+<p>Also, we’re going to be creating an infinite loop later in the chapter. You should probably make sure you know how to exit out of one of those! On most systems, Control + C will force Python to exit the loop. If that doesn’t work, try Control + D.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Why use a loop?" id="_why_use_a_loop">
+<h1>Why use a loop?</h1>
+
+<p>If we didn’t use loops to repeat code, then our code would be super long. If we wanted to do something five times, we’d have to have the same code, repeated five times. Maybe we would want to do something until something happened. How would we do that without loops? We would have to guess when something might happen, and repeat the code that many times!</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Types of loops" id="_types_of_loops">
+<h2>Types of loops</h2>
+
+<p>There are two kinds of loops: conditional loops and counting loops.</p>
+
+<p><strong>Conditional loops</strong> run until something happens. Maybe the user chooses to quit the program, or maybe the player slays the dragon. Maybe the dragon slays the player! Whatever the event, once it happens, the loop ends, and the program moves on.</p>
+
+<p><strong>Counting loops</strong> run a certain number of times. You might want to run a block of code five times (or a hundred times!). For example, you may want to give a player a certain number of tries to guess a number. After their guesses are used up, you can tell them that they lost.</p>
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Counting loops (for)" id="_counting_loops_for">
+<h1>Counting loops (for)</h1>
+
+<p>Let’s start with counting loops. In Python, we call these <code>for</code> loops. They look like this:</p>
+
+
+<pre data-type="programlisting">for num in range(nums):
+   code
+   code
+   code</pre>
+
+
+<p><code>nums</code> is the number of times you want the loop to run. So, if you want to run the code block five times, you would say <code>range(5)</code>.</p>
+
+<p><code>num</code> is the <strong>loop variable</strong>. Every time the loop runs, it’s going to store a new value. Let’s look at the following code. Run it and note what is printed out.</p>
+
+
+<pre data-type="programlisting">for num in range(10):
+    print num</pre>
+
+
+<p>Python printed out the numbers zero through nine! Let’s talk a bit more about what <code>range()</code> does.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Range" id="_range">
+<h2>Range</h2>
+
+<p><code>range()</code> has one job: It has to give you a list of numbers. Try out the following code:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">print</code> <code class="nb">range</code><code class="p">(</code><code class="mi">5</code><code class="p">)</code></pre>
+
+
+<p>If you give <code>range()</code> just one number, then Python will give you a list of numbers, from zero to <em>one less</em> than that number. Change the code above so that you get a list of numbers from zero to one hundred!</p>
+
+<p>What if you don’t want to start at zero? Easy! You can give <code>range()</code> two numbers. The first is where Python starts, and the second number is where Python will stop. Note, though, that Python still stops <em>one less</em> than that number. Try this code:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">print</code> <code class="nb">range</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code> <code class="mi">10</code><code class="p">)</code></pre>
+
+
+<p>You should have gotten a list of numbers from one to nine. Can you change the numbers so that they go from one to ten? What happens if you reverse the numbers?</p>
+
+<p>What if you only want odd numbers or even numbers, or if you want to count by fives? You can give <code>range()</code> three numbers, and Python will start at the first number and “step” up until it reaches the max number. Take a look at this code:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">print</code> <code class="nb">range</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code> <code class="mi">50</code><code class="p">,</code> <code class="mi">2</code><code class="p">)</code></pre>
+
+
+<p>Python printed out a list of numbers, starting at one and stopping just short of 50. It only printed the odd numbers, though. How would you change this code to print out the even numbers? What about counting by fives?</p>
+
+<p>You can also change the step number to a negative number. What happens when you run this?</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">print</code> <code class="nb">range</code><code class="p">(</code><code class="mi">10</code><code class="p">,</code> <code class="mi">0</code><code class="p">,</code> <code class="o">-</code><code class="mi">1</code><code class="p">)</code></pre>
+
+
+<p>You get a list of numbers, but this time starting at ten and going down to one! Can you change the code so that you get only even numbers?</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Range and for loops" id="_range_and_for_loops">
+<h2>Range and for loops</h2>
+
+<p>Now that you have a handle on what <code>range()</code> does, let’s combine it with a <code>for</code> loop. Before you run the following code, guess what Python will print out.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">5</code><code class="p">):</code>
+    <code class="k">print</code> <code class="s">"Hello!"</code></pre>
+
+
+<p>Python printed out five hellos, didn’t it? What do you think this code will do?</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">10</code><code class="p">):</code>
+    <code class="k">print</code> <code class="s">"@"</code> <code class="o">*</code> <code class="n">i</code></pre>
+
+
+<p>You should have gotten a triangle made out of at symbols on your screen.</p>
+
+<p>Each time the code in the code block is run, that’s called an <strong>iteration</strong>. It’s important to know that word, because we’re going to be using it quite a bit. So, if your <code>for</code> loop runs five times, it has five <strong>iterations</strong>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Skipping to the next item" id="_skipping_to_the_next_item">
+<h2>Skipping to the next item</h2>
+
+<p><code>for</code> loops are great, but sometimes you want to skip to the next iteration. To do that, we use <code>continue</code>.</p>
+
+<p>Here’s some code where we use <code>continue</code>. We want to print out the numbers zero through twenty, but if we can divide the number by three, then we want to print “Skip!”</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">21</code><code class="p">):</code>
+    <code class="k">if</code> <code class="n">i</code> <code class="o">/</code> <code class="mi">3</code> <code class="o">==</code> <code class="n">i</code> <code class="o">/</code> <code class="mf">3.0</code><code class="p">:</code>
+        <code class="k">print</code> <code class="s">"Skip!"</code>
+        <code class="k">continue</code>
+    <code class="k">print</code> <code class="n">i</code></pre>
+
+
+<p>Let’s talk about what this code is doing line by line.</p>
+
+<p><strong><code>for i in range(21)</code></strong>: This part should look familiar. We’re going to iterate through the numbers zero through twenty.</p>
+
+<p><strong><code>if i / 3 == 1 / 3.0</code></strong>: Remember our issue with dividing whole numbers? We can use that to our advantage here! Let’s say <code>i</code> is five. If we enter <code>5 / 3</code> into our intepreter, we get <code>1</code>. If we enter <code>5 / 3.0</code>, though, we get <code>1.6666667</code>. So five isn’t divisible by three!</p>
+
+<p><strong><code>print "Skip!"</code></strong>: We print skip if our current number is divisible by three…</p>
+
+<p><strong><code>continue</code></strong>: Once Python sees this, it knows that you don’t want it to run the rest of the code in the for loop. It goes back to the beginning, rather than running the rest of the code in the block.</p>
+
+<p><strong><code>print i</code></strong>: If the number isn’t divisible by three, then we print the number out.</p>
+
+<p><code>continue</code> is extremely useful for blocks of code that are long, or where there may be many instances where you want to continue to the next iteration.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Ending the loop early" id="_ending_the_loop_early">
+<h2>Ending the loop early</h2>
+
+<p>Sometimes, you want to end a loop early. For example, you may be searching for a certain item. Once you find it, you don’t want to keep going through every other item in the list. Your job is done! To do this, you use <code>break</code>.</p>
+
+<p>This time, let’s use <code>break</code> to quit our for loop once we find a number that is divisible by both five and seven.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code> <code class="mi">1000</code><code class="p">):</code>
+    <code class="k">if</code> <code class="n">i</code> <code class="o">/</code> <code class="mi">5</code> <code class="o">==</code> <code class="n">i</code> <code class="o">/</code> <code class="mf">5.0</code> <code class="ow">and</code> <code class="n">i</code> <code class="o">/</code> <code class="mi">7</code> <code class="o">==</code> <code class="n">i</code> <code class="o">/</code> <code class="mf">7.0</code><code class="p">:</code>
+        <code class="k">print</code> <code class="s">"Found it! It was:"</code><code class="p">,</code> <code class="n">i</code>
+        <code class="k">break</code>
+    <code class="k">print</code> <code class="n">i</code><code class="p">,</code> <code class="s">"doesn't work..."</code></pre>
+
+
+<p>If you run the code, you’ll see that the loop stops at 35. Once we found our number, we didn’t need to keep going, so we used <code>break</code> to stop the <code>for</code> loop early. This can be extremely useful if you have a bunch of reasons why you might want to break out of a loop.</p>
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Conditional loops (while)" id="_conditional_loops_while">
+<h1>Conditional loops (while)</h1>
+
+<p><code>for</code> loops are great for when you want to run a block of code a certain number of times. But what if you don’t know how many times you want to run something? What if you want to run some code until something happens? That’s when you use a <code>while</code> loop.</p>
+
+<p>A <code>while</code> loop looks like this:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">while</code> <code class="n">expression</code><code class="p">:</code>
+    <code class="n">code</code>
+    <code class="n">code</code>
+    <code class="n">code</code></pre>
+
+
+<p>While an expression is true, the code in the block will run (Just a reminder: an expression is something like <code>num == 5</code> or <code>books &gt; 6</code>). Once that expression is false, Python will stop running that block of code.</p>
+
+<p>Let’s check out a <code>while</code> loop in action. This time, we’re going to run a block of code until <code>num</code> is greater than five.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">num</code> <code class="o">=</code> <code class="mi">0</code>
+<code class="k">while</code> <code class="n">num</code> <code class="o">&lt;=</code> <code class="mi">5</code><code class="p">:</code>
+   <code class="k">print</code> <code class="s">"Num is"</code><code class="p">,</code> <code class="n">num</code>
+   <code class="n">num</code> <code class="o">=</code> <code class="n">num</code> <code class="o">+</code> <code class="mi">1</code></pre>
+
+
+<p>When you run the code, Python prints out six lines of text, starting with “Num is 0” and ending with “Num is 5”. What’s going on here?</p>
+
+<p>On the first iteration, <code>num</code> is zero. Zero is less than five, so the block of code is run. What happens during the last iteration? Well, <code>num</code> is five, so Python prints that out, then adds one to <code>num</code>. <code>num</code> is now six, which is <strong>not</strong> less than or equal to five, so Python doesn’t run the code block.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Infinite loops!" id="_infinite_loops">
+<h2>Infinite loops!</h2>
+
+<p>If you’re going to use a <code>while</code> loop, you need to make sure that you can actually get out of them! It’s very easy to create something called an <strong>infinite loop</strong> if you’re not paying attention. An infinite loop is one that will keep going, on and on, until you force the program to quit. They’re not a good thing!</p>
+
+<p>Let’s take a look at what an infinite loop might look like.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">num</code> <code class="o">=</code> <code class="mi">0</code>
+<code class="k">while</code> <code class="n">num</code> <code class="o">&lt;=</code> <code class="mi">5</code><code class="p">:</code>
+   <code class="k">print</code> <code class="s">"Num is"</code><code class="p">,</code> <code class="n">num</code></pre>
+
+
+<p>That looks almost like the code in the last section, but we forgot to add one to <code>num</code>. If we run this code, this is what we’ll see:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
+<code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
+<code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
+<code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
+<code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
+<code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
+<code class="o">...</code>
+<code class="o">-----</code>
+
+<code class="s">"Num is 0"</code> <code class="n">will</code> <code class="n">keep</code> <code class="n">on</code> <code class="n">printing</code> <code class="n">until</code> <code class="n">you</code> <code class="n">force</code> <code class="n">Python</code> <code class="n">to</code> <code class="n">stop</code><code class="o">.</code> <code class="n">In</code> <code class="n">IDLE</code><code class="p">,</code> <code class="n">you</code> <code class="n">do</code> <code class="n">this</code> <code class="n">by</code> <code class="n">pressing</code> <code class="n">control</code> <code class="o">+</code> <code class="n">C</code> <code class="p">(</code><code class="n">this</code> <code class="ow">is</code> <code class="n">the</code> <code class="n">case</code> <code class="k">for</code> <code class="n">both</code> <code class="n">Windows</code> <code class="ow">and</code> <code class="n">Macs</code><code class="p">)</code><code class="o">.</code>
+
+<code class="o">====</code> <code class="n">Skipping</code> <code class="n">a</code> <code class="n">turn</code>
+
+<code class="n">Just</code> <code class="n">like</code> <code class="sb">`for`</code> <code class="n">loops</code><code class="p">,</code> <code class="n">you</code> <code class="n">can</code> <code class="n">use</code> <code class="sb">`continue`</code> <code class="n">to</code> <code class="n">move</code> <code class="n">to</code> <code class="n">the</code> <code class="nb">next</code> <code class="n">iteration</code> <code class="n">of</code> <code class="n">your</code> <code class="sb">`while`</code> <code class="n">loop</code><code class="o">.</code> <code class="n">Here</code><code class="p">,</code> <code class="n">we</code> <code class="n">have</code> <code class="n">a</code> <code class="sb">`while`</code> <code class="n">loop</code> <code class="n">that</code> <code class="n">will</code> <code class="n">run</code> <code class="k">while</code> <code class="sb">`num`</code> <code class="ow">is</code> <code class="n">less</code> <code class="n">than</code> <code class="mf">20.</code> <code class="n">If</code> <code class="sb">`num`</code> <code class="n">equals</code> <code class="n">eleven</code><code class="p">,</code> <code class="n">though</code><code class="p">,</code> <code class="n">we</code> <code class="n">want</code> <code class="n">to</code> <code class="k">print</code> <code class="n">out</code> <code class="s">"My favorite number!"</code>
+
+<code class="p">[</code><code class="n">source</code><code class="p">,</code><code class="n">python</code><code class="p">]</code></pre>
+
+
+<p>num = 0
+while num &lt; 20:
+    num = num + 1
+    if num == 11:
+         print “My favorite!”
+         continue
+    print num</p>
+
+
+<pre data-type="programlisting">Note that eleven is never printed out. That's because we skip `print num` and move on to the next iteration of the `while` loop.
+
+==== Getting out of a loop early
+
+Again, just like `for` loops, we can get out of a loop early by using `break`. Let's change the code from the last section so that we break out of the loop when we get to my favorite number.
+
+[source,python]</pre>
+
+
+<p>num = 0
+while num &lt; 20:
+    num = num + 1
+    if num == 11:
+         print “My favorite!”
+         break
+    print num</p>
+
+
+<pre data-type="programlisting">This time, rather than printing out the numbers twelve through nineteen, Python stops once we hit eleven. Just like `for` loops, `break` is useful if there's many different reasons you might want to break out of a `while` loop.
+
+==== Try this!
+
+In IDLE, open up a new file and enter this code:
+
+[source,python]</pre>
+
+
+<p>num = 1
+while num ⇐ 100:
+    print “Num is”, num
+    if num / 2 == num / 2.0:
+        num = num + 2
+        continue
+    if num / 5 == num / 5.0:
+        num = num - 1
+        continue
+    num = num + 1</p>
+
+
+<pre data-type="programlisting">When you run the code, watch what numbers are skipped. What happened when when `num` was ten? How about fifteen? What was added during each of those iterations?</pre>
+
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+</section>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container">
+	<div class="row">
+	  <div class="pagination">
+	      <ul>
+	        <li class="prev"><span class="fa fa-chevron-left"/> <a href="ch05.html">Previous</a></li>
+	        <li class="next"><a href="ch07.html">Next</a> <span class="fa fa-chevron-right"/></li>
+	      </ul>
+	  </div>       
+	</div>
+    </div>
+
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12 disqus">
+	     <div id="disqus_thread"/>
+	   </div>
+       </div>
+    </div>
+ 
+    <div class="footer">
+      <footer>
+        <p>© O'Reilly Media, 2014</p>
+      </footer>
+    </div>
+
+  </body>
+
+</html>

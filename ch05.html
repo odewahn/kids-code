@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>kids code</title>
+
+    <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+   <script type="text/javascript" src="theme/html/javascripts/disqus.js"> </script>
+
+
+   <link href="theme/html/stylesheets/book.css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="theme/html/stylesheets/codemirror.css" media="all" rel="stylesheet" type="text/css"/>
+
+   <script src="theme/html/javascripts/codemirror.js"> </script>
+   <script src="theme/html/javascripts/coderunner.js"> </script>
+   <script src="theme/html/javascripts/jsrepl/jsrepl.js" id="jsrepl-script"> </script>
+
+   <link rel="stylesheet" href="theme/html/stylesheets/atlas.css"/>
+
+
+  </head>
+
+  <body data-type="book">
+
+    <div class="navbar navbar-fixed-top" role="navigation">	
+      <div class="container">
+        <div class="navbar-header">	
+	  <img class="logo" src="theme/html/assets/logo-white.svg"/>
+          <a class="title" href="#">kids code</a>
+        </div>
+
+	<div id="slideout">
+	    <span class="toc-control fa fa-bars"/>
+	    <div id="slideout_inner">
+		 <div class="input-group">
+	            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term"/>
+	            <div class="input-group-btn">
+	               <button class="btn btn-default search-button" type="submit"><span class="fa fa-search"/></button>
+	            </div>
+	         </div>   
+	        <h2>Contents</h2>
+	        <nav data-type="toc" id="idp77040"/>
+	    </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <section data-type="chapter" data-pdf-bookmark="Chapter 5. Running code sometimes" id="_running_code_sometimes">
+<h1>Running code sometimes</h1>
+
+
+<p>There are going to be times when you’ll want to run some code <em>only</em> if something is true. Maybe you’ll want to print out a different message whether someone won or lost a game, or you might want to let a user choose an item from a menu.</p>
+
+<p>If we didn’t have the ability to choose whether or not to run some code, our programs wouldn’t be very flexible. They wouldn’t be able to deal with bad input, and they might only be able to do one thing.</p>
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Notes for the grown-up" id="_notes_for_the_grown_up">
+<h1>Notes for the grown-up</h1>
+
+<p>In this chapter, we’re going to introduce <code>if</code> statements as well as the idea of Boolean statements.</p>
+
+<p>Honestly, the hardest part of this chapter is often the indentation. Students either forget to indent code to make it a block, or they don’t unindent a line so that they can start an elif or else clause. Be patient and sympathetic, and emphasize that Python really needs them to be precise.</p>
+
+<p>Precision is hard for many students because, so far, they haven’t had to be very precise! They might make a mistake on a spelling test, but that doesn’t cause them to fail. Being precise is a habit that they’ll soon pick up, so don’t worry if you feel like you have to remind them to indent or unindent over and over.</p>
+
+<p>The other thing many students do is use one equal sign (=) rather than two (==) when checking for equality. Many students, when they make this mistake, get screen blindness and <em>just can’t see</em> what’s wrong. I’ve found outright telling them rather than quizzing them gets them moving along faster. So, just say “You’re missing an equals sign here” rather than “What do you think might be wrong with this line?”</p>
+
+<p>There are times to use the Socratic method, and there are times to remember that Socrates was kind of a jerk.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="What you need to know…" id="_what_you_need_to_know">
+<h1>What you need to know…</h1>
+
+<p>You should have a good handle on text and numbers. If you don’t know what a float, integer, or string is, go read the last chapter again, or watch the quick review video.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Boolean: True and False" id="_boolean_true_and_false">
+<h1>Boolean: True and False</h1>
+
+<p>In order to decide if you need to do something, you need to decide if a statement is true or not. If a statement is correct, then Python will return True. If it isn’t, Python will return False.</p>
+
+<p>True and False are special values in Python called Boolean. Unlike strings and floats and integers, a Boolean can only be True or False.</p>
+
+<p>Notice that True and False are capitalized. That’s important! That’s how you know that Python is talking about a Boolean value. Try running the following code:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">print</code> <code class="bp">True</code>
+<code class="k">print</code> <code class="n">true</code></pre>
+
+
+<p>The first line worked fine, but the second line got an error, didn’t it? That’s because True is a proper boolean, but Python doesn’t know what to do with a true that’s lower case.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Comparing values" id="_comparing_values">
+<h2>Comparing values</h2>
+
+<p>We often get boolean values by comparing one or more items to each other. Sometimes, we want to see if two things are equal, while other times, we want to see if one is greater or smaller than the other.</p>
+
+<p>To test if something is equal to another thing, we use two equals signs (==) between the two values. Try the following statements out, and see what Python spits out:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">==</code> <code class="mi">2</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">==</code> <code class="mi">3</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="s">"Ahmed"</code> <code class="o">==</code> <code class="s">"Ahmed"</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="s">"Dominique"</code> <code class="o">==</code> <code class="s">"dominique"</code></pre>
+
+
+<p>With each statement, Python returned either True or False. Notice that Python was super picky about things being equal. The two strings “Dominique” and “dominique” were <em>close</em>, but they weren’t exactly alike. Python will only return true if the two items are <em>exactly the same</em>.</p>
+
+<p>You can also test for inequality, or two things <em>not</em> being alike. To do this, you use an exclamation point and an equal sign (!=). Try the following statements:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">!=</code> <code class="mi">2</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">!=</code> <code class="mi">3</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="s">"Ahmed"</code> <code class="o">!=</code> <code class="s">"Ahmed"</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="s">"Dominique"</code> <code class="o">!=</code> <code class="s">"dominique"</code></pre>
+
+
+<p>Compare that to the last bit of code. The results were the exact opposite! Once again, Python is super picky. If two things are even slightly different, then Python will return True when you ask it about inequality. Otherwise, it will return False.</p>
+
+<p>You can also test to see if something is greater than or less than something else. To do this, you use the greater than (&gt;) or less than (&lt;) sign. Try out the following statements:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">&gt;</code> <code class="mi">3</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">&lt;</code> <code class="mi">3</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">&gt;</code> <code class="mi">2</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">&lt;</code> <code class="mi">2</code></pre>
+
+
+<p>We can also check to see if an item is greater/less than <em>or equal to</em> another item. In math class, you might have used a special symbol ([\&gt;=\]) to do equations where you were worried about something being greater than or equal to another item (or vice versa). You don’t have that symbol on your keyboard, though, so instead, we just use the greater than / less than sign paired with an equal sign:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">&gt;=</code> <code class="mi">3</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">&lt;=</code> <code class="mi">3</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">&gt;=</code> <code class="mi">2</code>
+<code class="o">&gt;&gt;&gt;</code> <code class="mi">2</code> <code class="o">&lt;=</code> <code class="mi">2</code></pre>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Testing multiple things" id="_testing_multiple_things">
+<h2>Testing multiple things</h2>
+
+<p>Sometimes, you want to see if more than one thing is true. This is when using the <code>and</code> and <code>or</code> operators come in handy.</p>
+
+<p>Using <code>and</code> is pretty easy. You can use <code>and</code> to string together several expressions, and if all of them are true, Python will return True. If even one is false, though, Python will return False.</p>
+
+<p>We do this in the real world, too. Let’s say you wanted to buy a rabbit from a pet store. If you go to the shop by me, they check for a few things:</p>
+<ul>
+<li>
+<p>You have to be at least eighteen years old</p>
+</li>
+<li>
+<p>You have to have enough money to buy the rabbit</p>
+</li>
+<li>
+<p>You have to have a home for the rabbit at your house (no releasing these bunnies to the woods!)</p>
+</li>
+</ul>
+
+<p>If any of these things aren’t true, you don’t get to buy a rabbit. Sorry!</p>
+
+<p>Run the following code, and pay attention to what you’re asking Python. Which expression is True, and which is False?</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="mi">1</code> <code class="o">==</code> <code class="mi">1</code> <code class="ow">and</code> <code class="mi">2</code> <code class="o">==</code> <code class="mi">2</code>
+<code class="mi">2</code> <code class="o">&gt;</code> <code class="mi">3</code> <code class="ow">and</code> <code class="mi">3</code> <code class="o">&lt;</code> <code class="mi">4</code>
+<code class="mi">4</code> <code class="o">!=</code><code class="mi">5</code> <code class="ow">and</code> <code class="mi">6</code> <code class="o">!=</code> <code class="mi">6</code>
+<code class="mi">5</code> <code class="o">&gt;</code> <code class="mi">6</code> <code class="ow">and</code> <code class="mi">6</code> <code class="o">&gt;</code> <code class="mi">7</code></pre>
+
+
+<p>The <code>or</code> operator can be used to string together a series of expressions where you only care if <em>one</em> of the expressions is true. So, even if you’ve strung together 100 expressions (please don’t do that), if just one out of the 99 is true, Python will return True.</p>
+
+<p>Again, we do this in the real world. Let’s say I’m back at the pet shop, but I’m buying dog food. This time, they only check for three things:</p>
+<ul>
+<li>
+<p>Can I pay with cash?</p>
+</li>
+<li>
+<p>Can I pay with a credit or debit card?</p>
+</li>
+<li>
+<p>Can I pay with a check?</p>
+</li>
+</ul>
+
+<p>As long as one those things is true, I can buy my dog food. I might have all of those things, or I might have only one. Either way, I’m good to go.</p>
+
+<p>In this example, the same expressions as the last exercise have been joined together using <code>or</code>. Check out what Python returns this time.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="mi">1</code> <code class="o">==</code> <code class="mi">1</code> <code class="ow">and</code> <code class="mi">2</code> <code class="o">==</code> <code class="mi">2</code>
+<code class="mi">2</code> <code class="o">&gt;</code> <code class="mi">3</code> <code class="ow">and</code> <code class="mi">3</code> <code class="o">&lt;</code> <code class="mi">4</code>
+<code class="mi">4</code> <code class="o">!=</code><code class="mi">5</code> <code class="ow">and</code> <code class="mi">6</code> <code class="o">!=</code> <code class="mi">6</code>
+<code class="mi">5</code> <code class="o">&gt;</code> <code class="mi">6</code> <code class="ow">or</code> <code class="mi">6</code> <code class="o">&gt;</code> <code class="mi">7</code></pre>
+
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Using if statements" id="_using_if_statements">
+<h1>Using if statements</h1>
+
+<p>Now that we know how to tell if a expression is true or not, let’s learn how to run code only <em>if</em> that expression is true! To do that, we’ll create an <code>if</code> statement.</p>
+
+<p>Here’s what a basic if statment looks like:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="k">if</code> <code class="n">expression</code><code class="p">:</code>
+    <code class="n">code</code>
+    <code class="n">code</code>
+    <code class="n">code</code></pre>
+
+
+<p>If the expression in the <code>if</code> statement is true, then the indented code beneath the <code>if</code> will run. Otherwise, Python will skip over that code. That indented code is called a <strong>block</strong>.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="What’s a block?" id="_what_s_a_block">
+<h2>What’s a block?</h2>
+
+<p>In Python, you use blocks quite a bit. It’s how we tell Python that a bit of code should run differently. We might want it only to run if something is true, or we might want it to run multiple times.</p>
+
+<p>You create a block by putting four spaces before your code. If you’re working in IDLE, Python should put that space there for you. If you ever happen to work in an editor that doesn’t put that space in there for you, you’ll have to do it yourself.</p>
+
+<p>Let’s play around with an <code>if</code> statement. First, run the code and note what happens. Then, try to change the code so that the code under the <code>if</code> statment runs.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">name</code> <code class="o">=</code> <code class="s">"Jay"</code>
+<code class="k">if</code> <code class="n">name</code> <code class="o">==</code> <code class="s">"Kareem"</code><code class="p">:</code>
+    <code class="k">print</code> <code class="s">"Hey, buddy!"</code>
+<code class="k">print</code> <code class="s">"How are you today?"</code></pre>
+
+
+<p>There are a few ways you could make it so “Hey, buddy!” prints out. You could change <code>name</code> to “Kareem”, or you could change the <code>if</code> expression to <code>name == "Jay"</code>.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Adding in else" id="_adding_in_else">
+<h2>Adding in else</h2>
+
+<p>Sometimes, you want to run some code if something is true, and run some <em>other</em> code if that thing is false. In that case, we want to add an <code>else</code> to our <code>if</code> statment.</p>
+
+<p>Here is what a basic <code>if</code> statment with an <code>else</code> clause looks like:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">donuts</code> <code class="o">=</code> <code class="mi">3</code>
+<code class="k">if</code> <code class="n">donuts</code> <code class="o">&lt;</code> <code class="mi">5</code><code class="p">:</code>
+    <code class="k">print</code> <code class="s">"That's a bunch of donuts"</code>
+<code class="k">else</code><code class="p">:</code>
+    <code class="k">print</code> <code class="s">"You're running low on donuts."</code></pre>
+
+
+<p>Run the code and note what happens. We have five donuts, so <code>donuts &gt; 3</code> is false. Therefore, the code under the <code>else</code> clause is run. Python prints out “You’re running low on donuts.”</p>
+<div data-type="note">
+
+Note that the else clause has a block of code, too! Each clause for an <code>if</code> statement needs its own block to run!
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="elif: Doing many things!" id="_elif_doing_many_things">
+<h2>elif: Doing many things!</h2>
+
+<p>So far, we can do some code if something is true and something else if it isn’t true. What if we want to check for many things? In that case, we can add <code>elif</code> clauses to our <code>if</code> statment!</p>
+
+<p>When you write an <code>if</code> statement with <code>elif</code> clauses, Python will run through each Boolean expression, one by one. If one is true, Python will run that code block and skip the rest of the <code>if</code> statement. If none of the statements are true, Python will run the code under the <code>else</code> clause (if there is one).</p>
+
+<p>Here’s an example of an <code>if</code> statment with <code>elif</code> clauses. Run it, and note what’s printed out.</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">player_score</code> <code class="o">=</code> <code class="mi">150</code>
+<code class="n">worst_score</code> <code class="o">=</code> <code class="mi">50</code>
+<code class="n">best_score</code> <code class="o">=</code> <code class="mi">200</code>
+
+<code class="k">if</code> <code class="n">player_score</code> <code class="o">&gt;</code> <code class="n">best_score</code><code class="p">:</code>
+	<code class="k">print</code> <code class="s">"We have a new high score!"</code>
+	<code class="n">best_score</code> <code class="o">=</code> <code class="n">player_score</code>
+<code class="k">elif</code> <code class="n">player_score</code> <code class="o">&gt;</code> <code class="n">worst_score</code><code class="p">:</code>
+	<code class="k">print</code> <code class="s">"You did okay..."</code>
+<code class="k">else</code><code class="p">:</code>
+	<code class="k">print</code> <code class="s">"Oh man. We have a new worst score."</code>
+	<code class="n">worst_score</code> <code class="o">=</code> <code class="n">player_score</code></pre>
+
+
+<p>Notice that Python printed out “You did okay…” That’s because the player didn’t beat the high score, but also wasn’t lower than the worst score.</p>
+
+<p>Try changing the code so that the player beats the best score, and then try changing the player score so it’s lower than the worst score. What’s printed out each time?</p>
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Try this!" id="_try_this">
+<h1>Try this!</h1>
+
+<p>In IDLE, open up a new file and enter this code:</p>
+
+
+<pre data-type="programlisting" data-code-language="python"><code class="n">name</code> <code class="o">=</code> <code class="s">"Angel"</code>
+<code class="k">print</code> <code class="s">"That name is"</code><code class="p">,</code> <code class="nb">len</code><code class="p">(</code><code class="n">name</code><code class="p">),</code> <code class="s">"letters long."</code>
+
+<code class="k">if</code> <code class="nb">len</code><code class="p">(</code><code class="n">name</code><code class="p">)</code> <code class="o">&gt;</code> <code class="mi">10</code><code class="p">:</code>
+	<code class="k">print</code> <code class="s">"That's a long name!"</code>
+<code class="k">elif</code> <code class="nb">len</code><code class="p">(</code><code class="n">name</code><code class="p">)</code> <code class="o">&gt;</code> <code class="mi">5</code><code class="p">:</code>
+	<code class="k">print</code> <code class="s">"That's an average name."</code>
+<code class="k">else</code><code class="p">:</code>
+	<code class="k">print</code> <code class="s">"That's a short name!"</code></pre>
+
+
+<p>You don’t know what <code>len()</code> does, but can you take a guess? Try switching your name for <em>Angel</em>. Can you get Python to print out each of the responses?</p>
+</section>
+
+
+
+
+
+
+
+</section>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container">
+	<div class="row">
+	  <div class="pagination">
+	      <ul>
+	        <li class="prev"><span class="fa fa-chevron-left"/> <a href="ch04.html">Previous</a></li>
+	        <li class="next"><a href="ch06.html">Next</a> <span class="fa fa-chevron-right"/></li>
+	      </ul>
+	  </div>       
+	</div>
+    </div>
+
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12 disqus">
+	     <div id="disqus_thread"/>
+	   </div>
+       </div>
+    </div>
+ 
+    <div class="footer">
+      <footer>
+        <p>© O'Reilly Media, 2014</p>
+      </footer>
+    </div>
+
+  </body>
+
+</html>

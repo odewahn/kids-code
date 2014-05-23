@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>kids code</title>
+
+    <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+   <script type="text/javascript" src="theme/html/javascripts/disqus.js"> </script>
+
+
+   <link href="theme/html/stylesheets/book.css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="theme/html/stylesheets/codemirror.css" media="all" rel="stylesheet" type="text/css"/>
+
+   <script src="theme/html/javascripts/codemirror.js"> </script>
+   <script src="theme/html/javascripts/coderunner.js"> </script>
+   <script src="theme/html/javascripts/jsrepl/jsrepl.js" id="jsrepl-script"> </script>
+
+   <link rel="stylesheet" href="theme/html/stylesheets/atlas.css"/>
+
+
+  </head>
+
+  <body data-type="book">
+
+    <div class="navbar navbar-fixed-top" role="navigation">	
+      <div class="container">
+        <div class="navbar-header">	
+	  <img class="logo" src="theme/html/assets/logo-white.svg"/>
+          <a class="title" href="#">kids code</a>
+        </div>
+
+	<div id="slideout">
+	    <span class="toc-control fa fa-bars"/>
+	    <div id="slideout_inner">
+		 <div class="input-group">
+	            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term"/>
+	            <div class="input-group-btn">
+	               <button class="btn btn-default search-button" type="submit"><span class="fa fa-search"/></button>
+	            </div>
+	         </div>   
+	        <h2>Contents</h2>
+	        <nav data-type="toc" id="idp77040"/>
+	    </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <section data-type="chapter" data-pdf-bookmark="Chapter 1. Introduction (for kids)" id="_introduction_for_kids">
+<h1>Introduction (for kids)</h1>
+
+
+<p>TODO: Pithy intro</p>
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Who is this book for?" id="_who_is_this_book_for">
+<h1>Who is this book for?</h1>
+
+<p>This book is for a wide range of people. If you’ve never written any code, don’t worry! We’re starting from the very beginning! We’ll go over how to install everything you need, how to work in editors, and how to save your work and run your code. If you’re more advanced, you can probably race through the first few chapters, but we’ll be doing some cool stuff with the Internet and games in later chapters.</p>
+
+<p>Ideally, you should be working through this book with someone who already knows how to code. We’ll cover as much as we can, but questions come up that even the best book might not cover. This person might be a parent, a teacher, a relative or friend of the family, or even a friend who already knows how to code.</p>
+
+<p>If you don’t have a person, don’t fret! See if you can pair up with a friend while going through the projects. Two brains are better than one, and often, one of you will be able to sort out a problem that the other is stuck on. Even grown-up developers do this. It’s called pair programming!</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="What is coding?" id="_what_is_coding">
+<h1>What is coding?</h1>
+
+<p>So, what exactly is coding? To put it simply, coding is the act of telling a computer how to do something.</p>
+
+<p>Computers, as fast and amazing as they are, are really quite stupid. They don’t do a single thing unless you’ve told them how to do it. Every program you have on your computer is made of lines and lines of code, and those lines cover everything from how to save a file to how to display an icon or what to do when you click on that icon.</p>
+
+<p>This can sound intimidating at first, but most modern programming languages have created shortcuts for developers. For example, many of them include easy ways to display images, deal with pointers and keyboards, and play sounds. People have written libraries (collections of code) that allow you to create 3D worlds with realistic physics and models. Others have written libraries that allow you to talk to the Internet, or even create your own websites.</p>
+
+<p>Coding goes by many names: programming, development, hacking, etc. Though there are some subtle differences, the end goal is the same: Get the computer to do what we want.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Why code?" id="_why_code">
+<h1>Why code?</h1>
+
+<p>Many people think that the only people who need to know how to code are people who want to do it for a living. This couldn’t be further from the truth! If you have to deal with computers, then there’s probably some way that knowing to code can make your life easier.</p>
+
+<p>For example, you might write some code to check to see if your favorite site has updated recently, or you might write an app that helps you organize your books or t-shirts (Me, I have one that helps me keep track of my nail polish collection).</p>
+
+<p>Coding isn’t just about making your life easier, though! It can be about making your life more fun! If you know how to code, you can create mods for your favorite game, or even create games of your own.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Why Python?" id="_why_python">
+<h1>Why Python?</h1>
+
+<p>There are many languages you can use to code. Some are decades old, while some are only a few years old. In fact, some would argue that programming languages are older than computers! In the 1800’s, Ada Lovelace wrote the first <em>program</em> for a theoretical machine designed by Charles Babbage.</p>
+
+<figure id="ada_lovelace">
+<img src="images/ada.jpg" alt="Portrait of Ada Lovelace"/>
+<figcaption>Ada Lovelace, our first programmer</figcaption>
+</figure>
+
+<p>Today, there are dozens of languages that are in use. Even some of the first practical languages to be written are still in use, even though they were written in the 1940’s and 50’s!</p>
+
+<p>In this book, we’re going to be using Python. Python is not only incredibly easy to learn, but it’s also powerful and widely used. It can run on devices that can fit in your hand, and it helps power giants like YouTube, NASA, and Google. It’s been used to create websites, applications, and games.</p>
+
+<figure id="python_logo">
+<img src="images/python.png" alt="Python logo"/>
+<figcaption/>
+</figure>
+
+<p>And best of all? It’s free.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="What are we going to be doing?" id="_what_are_we_going_to_be_doing">
+<h1>What are we going to be doing?</h1>
+
+<p>In this book, we’re going to start off with the basics: saving information, telling our computer to do something (or not do something!), and doing stuff more than once.</p>
+
+<p>There will be a number of projects as we go which will use everything you’ve learned up to that point. Don’t worry if you start to get lost: We’ll have some sample code that shows you <strong>one</strong> way you could have written the program.</p>
+
+<p>By the end of the book, you’ll be writing games, websites, taking to the Internet, and you’ll have the tools to do an amazing number of things.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="What do I need?" id="_what_do_i_need">
+<h1>What do I need?</h1>
+
+<p>First, you’re going to need a computer. You need to be able to install things onto this computer. If you need someone else to enter a password before you can install something, make sure you talk to them about what you want to do.</p>
+
+<p>You’ll also need an Internet connection for some of the chapters. For some, you’ll need to download some files for a project or lesson. For others, you’ll be talking to a site on the Internet.</p>
+
+<p>You should also have time and space to work on the lessons and projects. We’ll ned a good chunk of your brain, and a messy desk and loud room are just going to take up space in your head. So make sure to have a clear space and some headphones when you want to code.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Where do I go if I need help?" id="_where_do_i_go_if_i_need_help">
+<h1>Where do I go if I need help?</h1>
+
+<p>The first place you might want to go is your grown-up. They might have a different way of explaining a concept that can help you out. Don’t forget, they’ve been in your position before! It’s highly unlikely that they were born knowing how to code.</p>
+
+<p>For each chapter, I’ve also included some extra material you can check out. Some are videos or websites that have a different way of explaining parts of programming.</p>
+
+<p>If you’re getting errors, try showing them to someone else. If no one else is close, try googling the error, leaving out the parts that are specific to your code. We’ll go over what parts of the error message are important as we go along.</p>
+
+<p>Finally, if you’re stumped, check out the code included at the end of each section. Read through each line and think about what each line is doing. Experiment with that code, changing parts until you’re fairly confident about what each line is doing.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="How do I use this “book”?" id="_how_do_i_use_this_book">
+<h1>How do I use this “book”?</h1>
+
+<p>This probably isn’t like most books you’ve learned from. It’s highly interactive! There are places where you can play with the code and run Python right from the book, rather than starting it up on your computer! It also includes videos, interactive diagrams, and lots of stuff to download and try out on your own.</p>
+
+<p>Each section has a portion that’s for your grown-up. Feel free to read that! We’re not swapping secrets or anything. I’m just trying to help them learn how to help you. You can also skip those parts, if you want.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="What is my adult supposed to be doing?" id="_what_is_my_adult_supposed_to_be_doing">
+<h1>What is my adult supposed to be doing?</h1>
+
+<p>You and your grown-up should probably talk about that. Some people who read this book are going to be fine doing most of the exercises on their own. Others may want their grown-up to do the projects right beside them. It’s up to the two of you! Be honest about how much help you think you might need, and feel free to tell your grown up when you need more, or when you’ve got a section under control.</p>
+
+<p>Do make sure they read the introduction that’s meant for them, though. It has a bunch of important information for them that benefits the both of you, and makes this book a whole bunch more fun to work through.</p>
+</section>
+
+
+
+
+
+
+
+</section>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container">
+	<div class="row">
+	  <div class="pagination">
+	      <ul>
+	        <li class="prev"><span class="fa fa-chevron-left"/> </li>
+	        <li class="next"><a href="ch02.html">Next</a> <span class="fa fa-chevron-right"/></li>
+	      </ul>
+	  </div>       
+	</div>
+    </div>
+
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12 disqus">
+	     <div id="disqus_thread"/>
+	   </div>
+       </div>
+    </div>
+ 
+    <div class="footer">
+      <footer>
+        <p>© O'Reilly Media, 2014</p>
+      </footer>
+    </div>
+
+  </body>
+
+</html>

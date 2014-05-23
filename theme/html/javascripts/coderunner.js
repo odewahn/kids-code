@@ -19,7 +19,7 @@ $(function() {
   
   // create textareas from pre, add run buttons
   $("*[data-executable").each(function(i) {
-    var txtarea = $("<textarea data-run-number='"+i+"' id='code-run-"+i+"'>" + $(this).text() + "</textarea>");
+    var txtarea = $("<pre data-run-number='"+i+"' id='code-run-"+i+"'>" + $(this).text() + "</pre>");
     var btn = $("<a class='btn run-btn' data-run-number='"+i+"' href='#'>Run Code</a>")
     $(this).after(btn);
     btn.hide();

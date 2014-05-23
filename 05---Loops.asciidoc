@@ -34,7 +34,7 @@ There are two kinds of loops: conditional loops and counting loops.
 
 Let's start with counting loops. In Python, we call these `for` loops. They look like this:
 
-[source,python]
+[data-executable=true][source,python]
 ----
 for num in range(nums):
    code
@@ -46,7 +46,7 @@ for num in range(nums):
 
 `num` is the *loop variable*. Every time the loop runs, it's going to store a new value. Let's look at the following code. Run it and note what is printed out.
 
-[source,python]
+[data-executable=true][source,python]
 ----
 for num in range(10):
     print num

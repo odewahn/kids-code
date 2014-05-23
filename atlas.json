@@ -28,7 +28,8 @@
     },
     "html": {
       "index": false,
-      "toc": false
+      "toc": true,
+      "pygments" : false
     }
   },
   "theme": "",

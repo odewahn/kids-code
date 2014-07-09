@@ -50,7 +50,7 @@
       </header>
       <div id="flex-box">
         <section id="sidebar">
-          <nav data-type="toc" id="idp77680"><ol><li data-type="chapter"><a href="ch01.html#_loops">Loops</a><ol>
+          <nav data-type="toc" id="idp110304"><ol><li data-type="chapter"><a href="ch01.html#_loops">Loops</a><ol>
 
 
 
@@ -378,8 +378,8 @@ for num in range(nums):
 <p><code>num</code> is the <strong>loop variable</strong>. Every time the loop runs, it’s going to store a new value. Let’s look at the following code. Run it and note what is printed out.</p>
 
 <pre class="programlisting pre" data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="k">for</code> <code class="n">num</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">10</code><code class="p">):</code>
-    <code class="k">print</code> <code class="n">num</code></pre>
+for num in range(10):
+    print num</pre>
 
 <p>Python printed out the numbers zero through nine! Let’s talk a bit more about what <code>range()</code> does.</p>
 
@@ -389,28 +389,28 @@ for num in range(nums):
 <p><code>range()</code> has one job: It has to give you a list of numbers. Try out the following code:</p>
 
 <pre class="programlisting pre " data-code-language="python" data-type="programlisting">
-<code class="k">print</code> <code class="nb">range</code><code class="p">(</code><code class="mi">5</code><code class="p">)</code></pre>
+print range(5)</pre>
 
 <p>If you give <code>range()</code> just one number, then Python will give you a list of numbers, from zero to <em>one less</em> than that number. Change the code above so that you get a list of numbers from zero to one hundred!</p>
 
 <p>What if you don’t want to start at zero? Easy! You can give <code>range()</code> two numbers. The first is where Python starts, and the second number is where Python will stop. Note, though, that Python still stops <em>one less</em> than that number. Try this code:</p>
 
 <pre class="programlisting pre" data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="k">print</code> <code class="nb">range</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code> <code class="mi">10</code><code class="p">)</code></pre>
+print range(1, 10)</pre>
 
 <p>You should have gotten a list of numbers from one to nine. Can you change the numbers so that they go from one to ten? What happens if you reverse the numbers?</p>
 
 <p>What if you only want odd numbers or even numbers, or if you want to count by fives? You can give <code>range()</code> three numbers, and Python will start at the first number and “step” up until it reaches the max number. Take a look at this code:</p>
 
 <pre class="programlisting pre" data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="k">print</code> <code class="nb">range</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code> <code class="mi">50</code><code class="p">,</code> <code class="mi">2</code><code class="p">)</code></pre>
+print range(1, 50, 2)</pre>
 
 <p>Python printed out a list of numbers, starting at one and stopping just short of 50. It only printed the odd numbers, though. How would you change this code to print out the even numbers? What about counting by fives?</p>
 
 <p>You can also change the step number to a negative number. What happens when you run this?</p>
 
 <pre class="programlisting pre" data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="k">print</code> <code class="nb">range</code><code class="p">(</code><code class="mi">10</code><code class="p">,</code> <code class="mi">0</code><code class="p">,</code> <code class="o">-</code><code class="mi">1</code><code class="p">)</code></pre>
+print range(10, 0, -1)</pre>
 
 <p>You get a list of numbers, but this time starting at ten and going down to one! Can you change the code so that you get only even numbers?</p>
 </section>
@@ -421,14 +421,14 @@ for num in range(nums):
 <p>Now that you have a handle on what <code>range()</code> does, let’s combine it with a <code>for</code> loop. Before you run the following code, guess what Python will print out.</p>
 
 <pre class="programlisting pre" data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">5</code><code class="p">):</code>
-    <code class="k">print</code> <code class="s">"Hello!"</code></pre>
+for i in range(5):
+    print "Hello!"</pre>
 
 <p>Python printed out five hellos, didn’t it? What do you think this code will do?</p>
 
 <pre class="programlisting pre" data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">10</code><code class="p">):</code>
-    <code class="k">print</code> <code class="s">"@"</code> <code class="o">*</code> <code class="n">i</code></pre>
+for i in range(10):
+    print "@" * i</pre>
 
 <p>You should have gotten a triangle made out of at symbols on your screen.</p>
 
@@ -443,11 +443,11 @@ for num in range(nums):
 <p>Here’s some code where we use <code>continue</code>. We want to print out the numbers zero through twenty, but if we can divide the number by three, then we want to print “Skip!”</p>
 
 <pre class="programlisting pre " data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">21</code><code class="p">):</code>
-    <code class="k">if</code> <code class="n">i</code> <code class="o">/</code> <code class="mi">3</code> <code class="o">==</code> <code class="n">i</code> <code class="o">/</code> <code class="mf">3.0</code><code class="p">:</code>
-        <code class="k">print</code> <code class="s">"Skip!"</code>
-        <code class="k">continue</code>
-    <code class="k">print</code> <code class="n">i</code></pre>
+for i in range(21):
+    if i / 3 == i / 3.0:
+        print "Skip!"
+        continue
+    print i</pre>
 
 <p>Let’s talk about what this code is doing line by line.</p>
 
@@ -472,11 +472,11 @@ for num in range(nums):
 <p>This time, let’s use <code>break</code> to quit our for loop once we find a number that is divisible by both five and seven.</p>
 
 <pre class="programlisting pre " data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code> <code class="mi">1000</code><code class="p">):</code>
-    <code class="k">if</code> <code class="n">i</code> <code class="o">/</code> <code class="mi">5</code> <code class="o">==</code> <code class="n">i</code> <code class="o">/</code> <code class="mf">5.0</code> <code class="ow">and</code> <code class="n">i</code> <code class="o">/</code> <code class="mi">7</code> <code class="o">==</code> <code class="n">i</code> <code class="o">/</code> <code class="mf">7.0</code><code class="p">:</code>
-        <code class="k">print</code> <code class="s">"Found it! It was:"</code><code class="p">,</code> <code class="n">i</code>
-        <code class="k">break</code>
-    <code class="k">print</code> <code class="n">i</code><code class="p">,</code> <code class="s">"doesn't work..."</code></pre>
+for i in range(1, 1000):
+    if i / 5 == i / 5.0 and i / 7 == i / 7.0:
+        print "Found it! It was:", i
+        break
+    print i, "doesn't work..."</pre>
 
 <p>If you run the code, you’ll see that the loop stops at 35. Once we found our number, we didn’t need to keep going, so we used <code>break</code> to stop the <code>for</code> loop early. This can be extremely useful if you have a bunch of reasons why you might want to break out of a loop.</p>
 </section>
@@ -490,20 +490,20 @@ for num in range(nums):
 <p>A <code>while</code> loop looks like this:</p>
 
 <pre class="programlisting pre " data-code-language="python" data-type="programlisting">
-<code class="k">while</code> <code class="n">expression</code><code class="p">:</code>
-    <code class="n">code</code>
-    <code class="n">code</code>
-    <code class="n">code</code></pre>
+while expression:
+    code
+    code
+    code</pre>
 
 <p>While an expression is true, the code in the block will run (Just a reminder: an expression is something like <code>num == 5</code> or <code>books &gt; 6</code>). Once that expression is false, Python will stop running that block of code.</p>
 
 <p>Let’s check out a <code>while</code> loop in action. This time, we’re going to run a block of code until <code>num</code> is greater than five.</p>
 
 <pre class="programlisting pre" data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="n">num</code> <code class="o">=</code> <code class="mi">0</code>
-<code class="k">while</code> <code class="n">num</code> <code class="o">&lt;=</code> <code class="mi">5</code><code class="p">:</code>
-   <code class="k">print</code> <code class="s">"Num is"</code><code class="p">,</code> <code class="n">num</code>
-   <code class="n">num</code> <code class="o">=</code> <code class="n">num</code> <code class="o">+</code> <code class="mi">1</code></pre>
+num = 0
+while num &lt;= 5:
+   print "Num is", num
+   num = num + 1</pre>
 
 <p>When you run the code, Python prints out six lines of text, starting with “Num is 0” and ending with “Num is 5”. What’s going on here?</p>
 
@@ -517,31 +517,31 @@ for num in range(nums):
 <p>Let’s take a look at what an infinite loop might look like.</p>
 
 <pre class="programlisting pre " data-code-language="python" data-type="programlisting">
-<code class="n">num</code> <code class="o">=</code> <code class="mi">0</code>
-<code class="k">while</code> <code class="n">num</code> <code class="o">&lt;=</code> <code class="mi">5</code><code class="p">:</code>
-   <code class="k">print</code> <code class="s">"Num is"</code><code class="p">,</code> <code class="n">num</code></pre>
+num = 0
+while num &lt;= 5:
+   print "Num is", num</pre>
 
 <p>That looks almost like the code in the last section, but we forgot to add one to <code>num</code>. If we run this code, this is what we’ll see:</p>
 
 <pre class="programlisting pre " data-code-language="python" data-type="programlisting">
-<code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
-<code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
-<code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
-<code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
-<code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
-<code class="n">Num</code> <code class="ow">is</code> <code class="mi">0</code>
-<code class="o">...</code>
-<code class="o">-----</code>
+Num is 0
+Num is 0
+Num is 0
+Num is 0
+Num is 0
+Num is 0
+...
+-----
 
-<code class="s">"Num is 0"</code> <code class="n">will</code> <code class="n">keep</code> <code class="n">on</code> <code class="n">printing</code> <code class="n">until</code> <code class="n">you</code> <code class="n">force</code> <code class="n">Python</code> <code class="n">to</code> <code class="n">stop</code><code class="o">.</code> <code class="n">In</code> <code class="n">IDLE</code><code class="p">,</code> <code class="n">you</code> <code class="n">do</code> <code class="n">this</code> <code class="n">by</code> <code class="n">pressing</code> <code class="n">control</code> <code class="o">+</code> <code class="n">C</code> <code class="p">(</code><code class="n">this</code> <code class="ow">is</code> <code class="n">the</code> <code class="n">case</code> <code class="k">for</code> <code class="n">both</code> <code class="n">Windows</code> <code class="ow">and</code> <code class="n">Macs</code><code class="p">)</code><code class="o">.</code>
+"Num is 0" will keep on printing until you force Python to stop. In IDLE, you do this by pressing control + C (this is the case for both Windows and Macs).
 
-<code class="o">====</code> <code class="n">Skipping</code> <code class="n">a</code> <code class="n">turn</code>
+==== Skipping a turn
 
-<code class="n">Just</code> <code class="n">like</code> <code class="sb">`for`</code> <code class="n">loops</code><code class="p">,</code> <code class="n">you</code> <code class="n">can</code> <code class="n">use</code> <code class="sb">`continue`</code> <code class="n">to</code> <code class="n">move</code> <code class="n">to</code> <code class="n">the</code> <code class="nb">next</code> <code class="n">iteration</code> <code class="n">of</code> <code class="n">your</code> <code class="sb">`while`</code> <code class="n">loop</code><code class="o">.</code> <code class="n">Here</code><code class="p">,</code> <code class="n">we</code> <code class="n">have</code> <code class="n">a</code> <code class="sb">`while`</code> <code class="n">loop</code> <code class="n">that</code> <code class="n">will</code> <code class="n">run</code> <code class="k">while</code> <code class="sb">`num`</code> <code class="ow">is</code> <code class="n">less</code> <code class="n">than</code> <code class="mf">20.</code> <code class="n">If</code> <code class="sb">`num`</code> <code class="n">equals</code> <code class="n">eleven</code><code class="p">,</code> <code class="n">though</code><code class="p">,</code> <code class="n">we</code> <code class="n">want</code> <code class="n">to</code> <code class="k">print</code> <code class="n">out</code> <code class="s">"My favorite number!"</code>
+Just like `for` loops, you can use `continue` to move to the next iteration of your `while` loop. Here, we have a `while` loop that will run while `num` is less than 20. If `num` equals eleven, though, we want to print out "My favorite number!"
 
 
-<code class="p">[</code><code class="n">data</code><code class="o">-</code><code class="n">executable</code><code class="o">=</code><code class="n">true</code><code class="p">]</code>
-<code class="p">[</code><code class="n">source</code><code class="p">,</code><code class="n">python</code><code class="p">]</code></pre>
+[data-executable=true]
+[source,python]</pre>
 
 <p>num = 0 while num &lt; 20: num = num + 1 if num == 11: print “My favorite!” continue print num</p>
 

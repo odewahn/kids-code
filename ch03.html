@@ -50,7 +50,7 @@
       </header>
       <div id="flex-box">
         <section id="sidebar">
-          <nav data-type="toc" id="idp77680"><ol><li data-type="chapter"><a href="ch01.html#_loops">Loops</a><ol>
+          <nav data-type="toc" id="idp110304"><ol><li data-type="chapter"><a href="ch01.html#_loops">Loops</a><ol>
 
 
 
@@ -400,18 +400,18 @@
 
 <p>This is probably the most simple guessing game you can make. Two people and exactly one guess. Here’s what the code looks like:</p>
 
-<pre class="programlisting" data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="n">secret_num</code> <code class="o">=</code> <code class="nb">input</code><code class="p">(</code><code class="s">"Player One, give me a number: "</code><code class="p">)</code>
+<pre class="programlisting " data-code-language="python" data-executable="true" data-type="programlisting">
+secret_num = input("Player One, give me a number: ")
 
-<code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">100</code><code class="p">):</code>
-    <code class="k">print</code> <code class="s">"Don't look, Player Two!"</code>
+for i in range(100):
+    print "Don't look, Player Two!"
 
-<code class="n">guess</code> <code class="o">=</code> <code class="nb">input</code><code class="p">(</code><code class="s">"Player Two, what's your guess? "</code><code class="p">)</code>
+guess = input("Player Two, what's your guess? ")
 
-<code class="k">if</code> <code class="n">guess</code> <code class="o">==</code> <code class="n">secret_num</code><code class="p">:</code>
-    <code class="k">print</code> <code class="s">"You got it!"</code>
-<code class="k">else</code><code class="p">:</code>
-    <code class="k">print</code> <code class="s">"Sorry, you lose."</code></pre>
+if guess == secret_num:
+    print "You got it!"
+else:
+    print "Sorry, you lose."</pre>
 
 <p>Basically, this code is:</p>
 
@@ -464,107 +464,107 @@
 
 <p>Here’s my finished game, that builds off of the basic game and incorporates all of the suggested features.</p>
 
-<pre class="programlisting" data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="n">max_num</code> <code class="o">=</code> <code class="mi">10</code>
+<pre class="programlisting " data-code-language="python" data-executable="true" data-type="programlisting">
+max_num = 10
 
-<code class="n">continue_game</code> <code class="o">=</code> <code class="s">"Y"</code>
+continue_game = "Y"
 
-<code class="k">while</code> <code class="n">continue_game</code> <code class="o">==</code> <code class="s">"Y"</code><code class="p">:</code>
-    <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
-        <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player One, give me a number: "</code><code class="p">)</code>
-        <code class="k">try</code><code class="p">:</code>
-            <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">secret_num</code><code class="p">)</code>
-        <code class="k">except</code><code class="p">:</code>
-            <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code>
+while continue_game == "Y":
+    while True:
+        secret_num = raw_input("Player One, give me a number: ")
+        try:
+            secret_num = int(secret_num)
+        except:
+            print "Sorry, I really need a number"
 
-        <code class="k">if</code> <code class="n">secret_num</code> <code class="o">&gt;</code> <code class="n">max_num</code><code class="p">:</code>
-            <code class="k">print</code> <code class="s">"Sorry, the number needs to be less than"</code><code class="p">,</code> <code class="n">max_num</code>
-        <code class="k">else</code><code class="p">:</code>
-            <code class="k">break</code>
+        if secret_num &gt; max_num:
+            print "Sorry, the number needs to be less than", max_num
+        else:
+            break
 
-    <code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">100</code><code class="p">):</code>
-        <code class="k">print</code> <code class="s">"Don't look, Player Two!"</code>
+    for i in range(100):
+        print "Don't look, Player Two!"
 
-    <code class="n">guess</code> <code class="o">=</code> <code class="s">""</code>
+    guess = ""
 
-    <code class="k">while</code> <code class="n">guess</code> <code class="o">!=</code> <code class="n">secret_num</code><code class="p">:</code>
-        <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
-            <code class="n">guess</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player Two, what's your guess? "</code><code class="p">)</code>
-            <code class="k">try</code><code class="p">:</code>
-                <code class="n">guess</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">guess</code><code class="p">)</code>
-                <code class="k">break</code>
-            <code class="k">except</code><code class="p">:</code>
-                <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code>
+    while guess != secret_num:
+        while True:
+            guess = raw_input("Player Two, what's your guess? ")
+            try:
+                guess = int(guess)
+                break
+            except:
+                print "Sorry, I really need a number"
 
-        <code class="k">if</code> <code class="n">guess</code> <code class="o">==</code> <code class="n">secret_num</code><code class="p">:</code>
-            <code class="k">print</code> <code class="s">"You got it!"</code>
-        <code class="k">elif</code> <code class="n">guess</code> <code class="o">&gt;</code> <code class="n">secret_num</code><code class="p">:</code>
-            <code class="k">print</code> <code class="s">"Hmm, that's too big..."</code>
-        <code class="k">else</code><code class="p">:</code>
-            <code class="k">print</code> <code class="s">"Nope, that's too small."</code>
+        if guess == secret_num:
+            print "You got it!"
+        elif guess &gt; secret_num:
+            print "Hmm, that's too big..."
+        else:
+            print "Nope, that's too small."
 
-    <code class="n">c</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Want another game [Y/N]?"</code><code class="p">)</code>
+    continue_game = raw_input("Want another game [Y/N]?")
 </pre>
 
 <p>Let’s go over what each chunk is doing. First, we set up some variables: The largest the secret number can be, and a variable that we’ll be using with the main loop of the game.</p>
 
 <pre class="programlisting " data-code-language="python" data-type="programlisting">
-<code class="n">max_num</code> <code class="o">=</code> <code class="mi">10</code>
+max_num = 10
 
-<code class="n">continue_game</code> <code class="o">=</code> <code class="s">"Y"</code></pre>
+continue_game = "Y"</pre>
 
 <p>Next, we start the game. Our first goal is to get a good number to guess! We make Player One enter numbers until we get an integer that’s less than ten.</p>
 
 <pre class="programlisting " data-code-language="python" data-executable="true" data-type="programlisting">
-<code class="k">while</code> <code class="n">continue_game</code> <code class="o">==</code> <code class="s">"Y"</code><code class="p">:</code>
-    <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
-        <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player One, give me a number: "</code><code class="p">)</code>
-        <code class="k">try</code><code class="p">:</code>
-            <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">secret_num</code><code class="p">)</code>
-        <code class="k">except</code><code class="p">:</code>
-            <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code>
+while continue_game == "Y":
+    while True:
+        secret_num = raw_input("Player One, give me a number: ")
+        try:
+            secret_num = int(secret_num)
+        except:
+            print "Sorry, I really need a number"
 
-        <code class="k">if</code> <code class="n">secret_num</code> <code class="o">&gt;</code> <code class="n">max_num</code><code class="p">:</code>
-            <code class="k">print</code> <code class="s">"Sorry, the number needs to be less than"</code><code class="p">,</code> <code class="n">max_num</code>
-        <code class="k">else</code><code class="p">:</code>
-            <code class="k">break</code></pre>
+        if secret_num &gt; max_num:
+            print "Sorry, the number needs to be less than", max_num
+        else:
+            break</pre>
 
 <p>Next, we spew out those print statements to push our secret number off the screen.</p>
 
 <pre class="programlisting" data-code-language="python" data-type="programlisting">
-    <code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">100</code><code class="p">):</code>
-        <code class="k">print</code> <code class="s">"Don't look, Player Two!"</code></pre>
+    for i in range(100):
+        print "Don't look, Player Two!"</pre>
 
 <p>Now it’s time for Player Two to guess Player One’s number. First, we set up <code>guess</code> to hold an empty string, so <code>guess != secret_num</code> will work properly (if we don’t set up <code>guess</code>, Python will give us an error).</p>
 
 <p>We need to get a good number out of Player Two, so once again, we keep asking Player Two for numbers until they give us an integer.</p>
 
 <pre class="programlisting " data-code-language="python" data-type="programlisting">
-    <code class="n">guess</code> <code class="o">=</code> <code class="s">""</code>
+    guess = ""
 
-    <code class="k">while</code> <code class="n">guess</code> <code class="o">!=</code> <code class="n">secret_num</code><code class="p">:</code>
-        <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
-            <code class="n">guess</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player Two, what's your guess? "</code><code class="p">)</code>
-            <code class="k">try</code><code class="p">:</code>
-                <code class="n">guess</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">guess</code><code class="p">)</code>
-                <code class="k">break</code>
-            <code class="k">except</code><code class="p">:</code>
-                <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code></pre>
+    while guess != secret_num:
+        while True:
+            guess = raw_input("Player Two, what's your guess? ")
+            try:
+                guess = int(guess)
+                break
+            except:
+                print "Sorry, I really need a number"</pre>
 
 <p>Once we get a good number, it’s time to see if the two numbers are the same, or if Player Two’s number was too big or too small. If the guess isn’t the same as the secret number, we’ll go back to <code>while guess != secret_num:</code> and get another number out of Player Two.</p>
 
 <pre class="programlisting " data-code-language="python" data-type="programlisting">
-        <code class="k">if</code> <code class="n">guess</code> <code class="o">==</code> <code class="n">secret_num</code><code class="p">:</code>
-            <code class="k">print</code> <code class="s">"You got it!"</code>
-        <code class="k">elif</code> <code class="n">guess</code> <code class="o">&gt;</code> <code class="n">secret_num</code><code class="p">:</code>
-            <code class="k">print</code> <code class="s">"Hmm, that's too big..."</code>
-        <code class="k">else</code><code class="p">:</code>
-            <code class="k">print</code> <code class="s">"Nope, that's too small."</code></pre>
+        if guess == secret_num:
+            print "You got it!"
+        elif guess &gt; secret_num:
+            print "Hmm, that's too big..."
+        else:
+            print "Nope, that's too small."</pre>
 
 <p>Finally, if Player Two <em>does</em> guess the secret number, we ask if they want to play again. If they enter a capital <em>Y</em>, then we start the game over. If they enter anything else, the game ends.</p>
 
-<pre class="programlisting" data-code-language="python" data-executable="true" data-type="programlisting">
-    <code class="n">c</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Want another game [Y/N]?"</code><code class="p">)</code></pre>
+<pre class="programlisting pre " data-code-language="python" data-executable="true" data-type="programlisting">
+    continue_game = raw_input("Want another game [Y/N]?")</pre>
 
 <section data-type="sect2" data-pdf-bookmark="My code doesn’t look like that!" id="_my_code_doesn_t_look_like_that">
 <h2>My code doesn’t look like that!</h2>

@@ -1,15 +1,9 @@
 {
   "branch": "master",
   "files": [
-    "01---Introduction-(for-kids).asciidoc",
-    "02---Introduction-(for-parents).asciidoc",
-    "03---Let's-get-started!.asciidoc",
-    "04.0---The-basics.asciidoc",
-    "04.1--Running-code-sometimes.asciidoc",
-    "05---Loops.asciidoc",
-    "06---Input-and-output.asciidoc",
-    "07---Project:-Number-guessing-game.asciidoc",
-    "08.0---Dictionaries-and-lists.asciidoc"
+    "05---Loops.html",
+    "08.0---Dictionaries-and-lists.html",
+    "07---Project:-Number-guessing-game.html"
   ],
   "formats": {
     "pdf": {
@@ -28,7 +22,8 @@
     },
     "html": {
       "index": false,
-      "toc": false
+      "toc": true,
+      "pygments": false
     }
   },
   "theme": "",

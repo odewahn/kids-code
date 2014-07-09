@@ -1,64 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" ng-app="console" lang="en">
   <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
     <title>kids code</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css"> </link>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
 
     <!-- Bootstrap core CSS -->
    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
-   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
 
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
-   <script type="text/javascript" src="theme/html/javascripts/disqus.js"> </script>
 
-
-   <link href="theme/html/stylesheets/book.css" media="all" rel="stylesheet" type="text/css"/>
-   <link href="theme/html/stylesheets/codemirror.css" media="all" rel="stylesheet" type="text/css"/>
-
-   <script src="theme/html/javascripts/codemirror.js"> </script>
-   <script src="theme/html/javascripts/coderunner.js"> </script>
+   <!-- Includes for codemirror and jsrepl -->
+   <script src="theme/html/javascripts/jquery-2.1.1.min.js"> </script>
+   <script src="theme/html/javascripts/angular.min.js"> </script>
+   <script src="theme/html/javascripts/jqconsole.min.js"> </script>
    <script src="theme/html/javascripts/jsrepl/jsrepl.js" id="jsrepl-script"> </script>
+   <script src="theme/html/javascripts/codemirror.js"> </script>
 
-   <link rel="stylesheet" href="theme/html/stylesheets/atlas.css"/>
+
+   <!-- Includes for angular and the angular app -->
+   <script src="theme/html/app.js"> </script>
+
+   <!-- General stylesheet -->
+   <link rel="stylesheet" type="text/css" href="theme/html/stylesheets/coderunner.css"/>
+   <link rel="stylesheet" type="text/css" href="theme/html/stylesheets/codemirror.css"/>
+   <link rel="stylesheet" type="text/css" href="theme/html/stylesheets/console.css"/>
+   <link rel="stylesheet" type="text/css" href="theme/html/stylesheets/html.css"/>
 
 
+    <script type="text/javascript">
+      $(function() {
+        $("#link-toc").click(function(e) {
+          e.preventDefault();
+          $("#sidebar").toggle();
+        });
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="theme/html/html.css"/>
   </head>
-
   <body data-type="book">
+    
+    <header>
+      <div id="buttons">
+        <a href="#" id="link-toc">☰</a>
+      </div>
+      <img class="logo" src="http://orm-logo-service.herokuapp.com//logo.svg"/>
+      <h1>kids code</h1>
+      </header>
+      <div id="flex-box">
+        <section id="sidebar">
+          <nav data-type="toc" id="idp77680"><ol><li data-type="chapter"><a href="ch01.html#_loops">Loops</a><ol>
 
-    <div class="navbar navbar-fixed-top" role="navigation">	
-      <div class="container">
-        <div class="navbar-header">	
-	  <img class="logo" src="theme/html/assets/logo-white.svg"/>
-          <a class="title" href="#">kids code</a>
-        </div>
 
-	<div id="slideout">
-	    <span class="toc-control fa fa-bars"/>
-	    <div id="slideout_inner">
-		 <div class="input-group">
-	            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term"/>
-	            <div class="input-group-btn">
-	               <button class="btn btn-default search-button" type="submit"><span class="fa fa-search"/></button>
-	            </div>
-	         </div>   
-	        <h2>Contents</h2>
-	        <nav data-type="toc" id="idp87440"><ol><li data-type="chapter"><a href="ch01.html#_introduction_for_kids">Introduction (for kids)</a><ol>
 
 
+<li data-type="sect1"><a href="ch01.html#_what_you_need_to_know">What you need to know…</a></li>
 
+<li data-type="sect1"><a href="ch01.html#_notes_for_the_grown_up">Notes for the grown-up</a></li>
 
+<li data-type="sect1"><a href="ch01.html#_why_use_a_loop">Why use a loop?</a><ol>
 
 
 
 
+<li data-type="sect2"><a href="ch01.html#_types_of_loops">Types of loops</a></li>
+</ol></li>
 
+<li data-type="sect1"><a href="ch01.html#_counting_loops_for">Counting loops (for)</a><ol>
 
-<li data-type="sect1"><a href="ch01.html#_who_is_this_book_for">Who is this book for?</a></li>
 
 
 
@@ -72,11 +82,16 @@
 
 
 
-<li data-type="sect1"><a href="ch01.html#_what_is_coding">What is coding?</a></li>
+<li data-type="sect2"><a href="ch01.html#_range">Range</a></li>
 
+<li data-type="sect2"><a href="ch01.html#_range_and_for_loops">Range and for loops</a></li>
 
+<li data-type="sect2"><a href="ch01.html#_skipping_to_the_next_item">Skipping to the next item</a></li>
 
+<li data-type="sect2"><a href="ch01.html#_ending_the_loop_early">Ending the loop early</a></li>
+</ol></li>
 
+<li data-type="sect1"><a href="ch01.html#_conditional_loops_while">Conditional loops (while)</a><ol>
 
 
 
@@ -86,7 +101,6 @@
 
 
 
-<li data-type="sect1"><a href="ch01.html#_why_code">Why code?</a></li>
 
 
 
@@ -96,11 +110,14 @@
 
 
 
+<li data-type="sect2"><a href="ch01.html#_infinite_loops">Infinite loops!</a></li>
+</ol></li>
+</ol></li><li data-type="chapter"><a href="ch02.html#_grouping_values_dictionaries_and_lists">Grouping values: Dictionaries and lists</a><ol>
 
 
 
 
-<li data-type="sect1"><a href="ch01.html#_why_python">Why Python?</a></li>
+<li data-type="sect1"><a href="ch02.html#_what_you_need_to_know">What you need to know…</a></li>
 
 
 
@@ -108,19 +125,21 @@
 
 
 
+<li data-type="sect1"><a href="ch02.html#_a_note_for_the_grown_up">A note for the grown-up</a></li>
 
 
 
 
 
 
-<li data-type="sect1"><a href="ch01.html#_what_are_we_going_to_be_doing">What are we going to be doing?</a></li>
 
+<li data-type="sect1"><a href="ch02.html#_lists">Lists</a><ol>
 
 
 
 
 
+<li data-type="sect2"><a href="ch02.html#_what_s_an_index">What’s an index?</a></li>
 
 
 
@@ -128,7 +147,7 @@
 
 
 
-<li data-type="sect1"><a href="ch01.html#_what_do_i_need">What do I need?</a></li>
+<li data-type="sect2"><a href="ch02.html#_addding_values_to_a_list">Addding values to a list</a></li>
 
 
 
@@ -136,14 +155,15 @@
 
 
 
+<li data-type="sect2"><a href="ch02.html#_removing_values_from_a_list">Removing values from a list</a></li>
 
 
 
 
 
 
-<li data-type="sect1"><a href="ch01.html#_where_do_i_go_if_i_need_help">Where do I go if I need help?</a></li>
 
+<li data-type="sect2"><a href="ch02.html#_changing_a_value">Changing a value</a></li>
 
 
 
@@ -151,82 +171,7 @@
 
 
 
-
-
-
-
-
-<li data-type="sect1"><a href="ch01.html#_how_do_i_use_this_book">How do I use this “book”?</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch01.html#_what_is_my_adult_supposed_to_be_doing">What is my adult supposed to be doing?</a></li>
-
-
-
-
-
-
-
-</ol></li><li data-type="chapter"><a href="ch02.html#_introduction_for_adults">Introduction (for adults)</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch02.html#_who_is_this_book_for">Who is this book for?</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch02.html#_if_you_don_t_know_python">If you don’t know Python…</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch02.html#_if_you_don_t_know_how_to_code">If you don’t know how to code…</a></li>
-
-
-
+<li data-type="sect2"><a href="ch02.html#_lists_and_loops">Lists and loops!</a></li>
 
 
 </ol></li>
@@ -237,27 +182,13 @@
 
 
 
+<li data-type="sect1"><a href="ch02.html#_dictionaries">Dictionaries</a><ol>
 
 
 
 
 
-
-<li data-type="sect1"><a href="ch02.html#_how_to_use_this_book">How to use this book</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch02.html#_learning_about_teaching">Learning about teaching</a><ol>
+<li data-type="sect2"><a href="ch02.html#_keys_and_values">Keys and values</a></li>
 
 
 
@@ -265,14 +196,7 @@
 
 
 
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch02.html#_scaffolding">Scaffolding</a></li>
-
+<li data-type="sect2"><a href="ch02.html#_adding_values_to_a_dictionary">Adding values to a dictionary</a></li>
 
 
 
@@ -280,13 +204,7 @@
 
 
 
-
-
-
-
-
-<li data-type="sect2"><a href="ch02.html#_hands_on_hands_off">Hands on / Hands off</a></li>
-
+<li data-type="sect2"><a href="ch02.html#_changing_values_in_a_dictionary">Changing values in a dictionary</a></li>
 
 
 
@@ -294,15 +212,23 @@
 
 
 
+<li data-type="sect2"><a href="ch02.html#_removing_values_from_a_list_2">Removing values from a list</a></li>
 
 
 
 
 
-<li data-type="sect2"><a href="ch02.html#_managing_your_expectations_and_theirs">Managing your expectations (and theirs!)</a></li>
+
+
+<li data-type="sect2"><a href="ch02.html#_getting_all_the_keys_or_values">Getting all the keys (or values!)</a></li>
 
 
 
+
+
+
+
+<li data-type="sect2"><a href="ch02.html#_dictionaries_and_loops">Dictionaries and loops!</a></li>
 
 
 </ol></li>
@@ -313,13 +239,14 @@
 
 
 
+<li data-type="sect1"><a href="ch02.html#_try_this">Try this!</a></li>
 
 
 
+</ol></li><li data-type="chapter"><a href="ch03.html#_project_number_guessing_game">Project: Number guessing game</a><ol>
 
 
 
-<li data-type="sect1"><a href="ch02.html#_the_set_up">The set-up</a></li>
 
 
 
@@ -327,12 +254,15 @@
 
 
 
-</ol></li><li data-type="chapter"><a href="ch03.html#_let_s_get_started">Let’s get started!</a><ol>
 
 
+<li data-type="sect1"><a href="ch03.html#_what_you_need_to_know">What you need to know…</a></li>
 
+<li data-type="sect1"><a href="ch03.html#_a_note_for_the_mentor">A note for the mentor</a></li>
 
+<li data-type="sect1"><a href="ch03.html#_the_plan">The plan!</a></li>
 
+<li data-type="sect1"><a href="ch03.html#_the_basic_game">The basic game</a><ol>
 
 
 
@@ -340,81 +270,18 @@
 
 
 
-<li data-type="sect1"><a href="ch03.html#_what_you_re_going_to_need">What you’re going to need</a></li>
 
 
 
 
 
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch03.html#_installing_python">Installing Python</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch03.html#_what_s_an_operating_system">What’s an operating system?</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch03.html#_windows">Windows</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch03.html#_mac_os">Mac OS</a></li>
-
-
-
-
-
+<li data-type="sect2"><a href="ch03.html#_try_adding">Try adding…</a></li>
 </ol></li>
 
+<li data-type="sect1"><a href="ch03.html#_the_finished_game">The finished game</a><ol>
 
 
 
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch03.html#_idle">IDLE</a><ol>
 
 
 
@@ -440,1773 +307,280 @@
 
 
 
-<li data-type="sect2"><a href="ch03.html#_working_in_the_interpreter">Working in the Interpreter</a></li>
 
 
 
 
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch03.html#_working_in_a_file">Working in a file</a></li>
-
-
-
-
-
+<li data-type="sect2"><a href="ch03.html#_my_code_doesn_t_look_like_that">My code doesn’t look like that!</a></li>
 </ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch03.html#_working_in_the_book">Working in the book!</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch03.html#_from_the_book_to_your_computer">From the book to your computer</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch03.html#_try_this">Try this!</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch03.html#_notes_for_the_adult">Notes for the adult</a></li>
-
-
-
-
-
-
-
-</ol></li><li data-type="chapter"><a href="ch04.html#_first_some_basics">First, some basics</a><ol>
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch04.html#_notes_for_the_grown_up">Notes for the grown-up</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch04.html#_what_you_need_for_this_chapter">What you need for this chapter</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch04.html#_let_s_do_some_math">Let’s do some math</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch04.html#_the_rest_of_the_operators">The rest of the operators</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch04.html#_types_of_numbers">Types of numbers</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch04.html#_storing_information">Storing information</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch04.html#_rules_about_naming_variables">Rules about naming variables</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch04.html#_storing_text">Storing text</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch04.html#_printing_text">Printing text</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch04.html#_doing_math">Doing math?</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch04.html#_try_this">Try this!</a></li>
-
-
-
-
-
-
-
-</ol></li><li data-type="chapter"><a href="ch05.html#_running_code_sometimes">Running code sometimes</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch05.html#_notes_for_the_grown_up">Notes for the grown-up</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch05.html#_what_you_need_to_know">What you need to know…</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch05.html#_boolean_true_and_false">Boolean: True and False</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch05.html#_comparing_values">Comparing values</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch05.html#_testing_multiple_things">Testing multiple things</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch05.html#_using_if_statements">Using if statements</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch05.html#_what_s_a_block">What’s a block?</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch05.html#_adding_in_else">Adding in else</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch05.html#_elif_doing_many_things">elif: Doing many things!</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch05.html#_try_this">Try this!</a></li>
-
-
-
-
-
-
-
-</ol></li><li data-type="chapter"><a href="ch06.html#_loops">Loops</a><ol>
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch06.html#_what_you_need_to_know">What you need to know…</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch06.html#_notes_for_the_grown_up">Notes for the grown-up</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch06.html#_why_use_a_loop">Why use a loop?</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch06.html#_types_of_loops">Types of loops</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch06.html#_counting_loops_for">Counting loops (for)</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch06.html#_range">Range</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch06.html#_range_and_for_loops">Range and for loops</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch06.html#_skipping_to_the_next_item">Skipping to the next item</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch06.html#_ending_the_loop_early">Ending the loop early</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch06.html#_conditional_loops_while">Conditional loops (while)</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch06.html#_infinite_loops">Infinite loops!</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-</ol></li><li data-type="chapter"><a href="ch07.html#_getting_and_showing_information">Getting and showing information</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch07.html#_what_you_need_for_this_chapter">What you need for this chapter</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch07.html#_notes_to_the_mentor">Notes to the mentor</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch07.html#_input_output">Input? Output?</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch07.html#_showing_information">Showing information</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch07.html#_the_print_statement">The print statement</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch07.html#_formatting_and_non_printing_characters">Formatting and non-printing characters</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch07.html#_not_moving_to_a_new_line">Not moving to a new line</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch07.html#_inserting_values">Inserting values</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch07.html#_getting_information">Getting information</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch07.html#_getting_numbers">Getting numbers</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch07.html#_getting_text">Getting text</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch07.html#_add_a_prompt">Add a prompt</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch07.html#_converting_text_to_numbers">Converting text to numbers</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch07.html#_getting_good_information_from_the_user">Getting good information from the user</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch07.html#_try_except">try / except</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch07.html#_make_sure_you_get_good_information">Make sure you get good information</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch07.html#_try_this">Try this!</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-</ol></li><li data-type="chapter"><a href="ch08.html#_project_number_guessing_game">Project: Number guessing game</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch08.html#_what_you_need_to_know">What you need to know…</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch08.html#_a_note_for_the_mentor">A note for the mentor</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch08.html#_the_plan">The plan!</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch08.html#_the_basic_game">The basic game</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch08.html#_try_adding">Try adding…</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch08.html#_the_finished_game">The finished game</a><ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch08.html#_my_code_doesn_t_look_like_that">My code doesn’t look like that!</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-</ol></li><li data-type="chapter"><a href="ch09.html#_grouping_values_dictionaries_and_lists">Grouping values: Dictionaries and lists</a><ol>
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch09.html#_what_you_need_to_know">What you need to know…</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch09.html#_a_note_for_the_grown_up">A note for the grown-up</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch09.html#_lists">Lists</a><ol>
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch09.html#_what_s_an_index">What’s an index?</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch09.html#_addding_values_to_a_list">Addding values to a list</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch09.html#_removing_values_from_a_list">Removing values from a list</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch09.html#_changing_a_value">Changing a value</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch09.html#_lists_and_loops">Lists and loops!</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch09.html#_dictionaries">Dictionaries</a><ol>
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch09.html#_keys_and_values">Keys and values</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch09.html#_adding_values_to_a_dictionary">Adding values to a dictionary</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch09.html#_changing_values_in_a_dictionary">Changing values in a dictionary</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch09.html#_removing_values_from_a_list_2">Removing values from a list</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch09.html#_getting_all_the_keys_or_values">Getting all the keys (or values!)</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect2"><a href="ch09.html#_dictionaries_and_loops">Dictionaries and loops!</a></li>
-
-
-
-
-
-</ol></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li data-type="sect1"><a href="ch09.html#_try_this">Try this!</a></li>
-
-
-
-
-
-
-
 </ol></li></ol></nav>
-	    </div>
-	</div>
-      </div>
-    </div>
+        </section>
+        <section id="content">
+          <section id="content-body">
+            <ul class="page-navigation">              
+              <li><a href="ch02.html">Previous</a></li>
+              <li/>
+            </ul>
+            <section data-type="chapter" data-pdf-bookmark="Chapter 3. Project: Number guessing game" id="_project_number_guessing_game">
+<h1>Project: Number guessing game</h1>
 
+<p>Finally, you have enough coding knowledge to write a simple game! Because this is our first project, let’s go over how this is going to work.</p>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <section data-type="chapter" data-pdf-bookmark="Chapter 3. Let’s get started!" id="_let_s_get_started">
-<h1>Let’s get started!</h1>
+<p>First, I’m going to lay out a plan for you. This plan will include everything our game needs to have in it. Once you read over the plan, you may already have an idea of what the code should look like. If you want to start coding, go right ahead.</p>
 
+<p>If you’re still a little uneasy, though, feel free to move to the next section. There, we’ll have some code for you to work with. It works, so try to play around with it and understand how it’s doing what it’s doing.</p>
 
-<p>What the first thing we’re going to need to do in order to start coding? We’re going to have to install Python!</p>
+<p>Once we have the basic game, I’ll make some suggestions on what you should try adding. Feel free to add whatever you want, or add your own twist to the game.</p>
 
-<p>Don’t worry: Installing Python is super easy. It may even already be on your computer. We’re also going to over different ways to edit and run our code.</p>
+<p>Finally, I’ll show you my finished code. The final code will have all of the additions that I suggested along the way.</p>
 
+<section data-type="sect1" data-pdf-bookmark="What you need to know…" id="_what_you_need_to_know">
+<h1>What you need to know…</h1>
 
+<p>You should be familiar with everything we’ve gone over until now, but you should be especially comfortable with:</p>
 
-
-
-
-<section data-type="sect1" data-pdf-bookmark="What you’re going to need" id="_what_you_re_going_to_need">
-<h1>What you’re going to need</h1>
-
-<p>For this section, you’re going to need:</p>
-
-<p><strong>A computer.</strong> You’ll need to be able to install things onto your computer. If someone else has to enter a password in order for you to install new things, make sure you have them on hand.</p>
-
-<p><strong>An Internet connection.</strong> You’re going to need to download Python in order to install it.</p>
-<div data-type="note">
-<h1>Python 2 vs Python 3</h1>
-
-<p>There are two kinds of Python being used at the moment: Python 2 and Python 3. We’re going to be using Python 2.</p>
-
-<p>Why? When learning a new language, you’ll probably find yourself searching the Internet for problems you’re having. Python 2 wins there simply because it’s been around for longer. It’s also very stable, meaning that there are relatively few changes being made to it today.</p>
-
-<p>Once you pick up Python 2, Python 3 is super easy to pick up. There are even scripts out there that help you move your code over from Python 2 to Python 3!</p>
-
-</div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section data-type="sect1" data-pdf-bookmark="Installing Python" id="_installing_python">
-<h1>Installing Python</h1>
-
-<p>Let’s install Python! First, though, we need to figure out what operating system is installed on your computer.</p>
-
-
-
-
-
-
-
-
-<section data-type="sect2" data-pdf-bookmark="What’s an operating system?" id="_what_s_an_operating_system">
-<h2>What’s an operating system?</h2>
-
-<p>An operating system is a collection of programs that works with the hardware of your computer (that’s the stuff you can touch). So, your operating system helps images appear on your monitor, or knows that when you move your mouse or touch your touchpad that you want to move the cursor. It’s a layer between the programs you want to run (like games, browsers, or word processing programs) and the physical part of the machine.</p>
-
-<p>More than likely, you’re running one of the two major operating systems.</p>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section data-type="sect2" data-pdf-bookmark="Windows" id="_windows">
-<h2>Windows</h2>
-
-<p>If you have a computer that has Start menu or Start screen, then you’re running Windows. One of the screenshots in Figure X.X should look familiar.</p>
-
-<figure id="windows_shots">
-<img src="images/windows_shots.png" alt="Default sceenshots of three Windows desktops"/>
-<figcaption>Screenshots of Windows XP, 7, and 8</figcaption>
-</figure>
-
-<p>If you are, in fact, running Windows, go ahead and download Python from <a href="http://www.python.org/download/">Python.org’s download page</a>.</p>
-
-<p>Python will run on nearly every version of Windows out there, but the download page has multiple versions available. You’re going to need to search for the link that says something like “Python 2.7.6 Windows Installer”.</p>
-<div data-type="note">
-
-
-<p>The version numbers might change slightly. Just make sure that the first number is a two!</p>
-
-</div>
-
-<p>Installing it should be pretty easy. Once the file has downloaded, click on the installer and follow the instructions. If you get stuck or nervous, I’ve included a video here that goes through the process step-by-step and explains what each screen means.</p>
-
-<p>TODO: Video</p>
-
-<p>Once you’re done installing Python, check out your installed applications. On XP and 7, you can click on the Start button. On Windows 8, you can hit your Windows key and type <em>Python</em> to bring up your Python applications.</p>
-
-<figure id="idle_icon">
-<img src="images/idle_icon.png" alt="IDLE's icon, as seen in Windows 8"/>
-<figcaption>The icon for IDLE</figcaption>
-</figure>
-
-<p>One of the applications is called IDLE. That’s what we’ll be working in for the rest of this book, so make sure you can start that up before you move on.</p>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section data-type="sect2" data-pdf-bookmark="Mac OS" id="_mac_os">
-<h2>Mac OS</h2>
-
-<p>If you have a computer that has a glowing apple on it or an Apple on the toolbar (check out Figure X.X), then you’re on a Mac! And guess what? Python is already installed! You won’t see it as an application in your Applications folder, but it’s there, trust me.</p>
-
-<figure id="mac_spotlight">
-<img src="images/spotlight.png" alt="A user is searching for Adobe using Spotlight"/>
-<figcaption>Mac’s spotlight menu at work</figcaption>
-</figure>
-
-<p>Before we move on, we want to make sure that Python is working. First, you’ll need to bring up something called a Terminal. Search for Terminal in your Spotlight (the magnifying glass on your toolbar). When you click on it, a window should pop up that looks something like the screenshot in Figure X.X.</p>
-
-<figure id="mac_terminal">
-<img src="images/terminal.png" alt="Screen shot of my mac terminal window"/>
-<figcaption>Mac Terminal</figcaption>
-</figure>
-
-<p>In the terminal window, type the word <em>idle</em>. An applicaiton called IDLE should open up. Remember how to do this, because we’re going to be working in IDLE for the rest of the book!</p>
-
-<p>If you’re confused, here’s a video, showing me getting a terminal window and opening up IDLE.</p>
-<video width="500" height="300" poster="generic_video.png">
-<source src="http://www.youtube.com/embed/4BELLHgnFzM"/>
-Sorry, the &lt;video&gt; element is not supported in your reading system.
-</video>
-</section>
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section data-type="sect1" data-pdf-bookmark="IDLE" id="_idle">
-<h1>IDLE</h1>
-
-<p>By now, no matter what operating system you’re on, you should have IDLE up. What is IDLE?</p>
-
-<p>IDLE is an application that comes with Python that makes it easier for you to write and run code. It has two parts: The interpreter, and the editor. Right now, you probably have the interpreter open (there should be a prompt that looks like this: “&gt;&gt;&gt;”). To open the editor, go to File &gt; New. A blank window should open.</p>
-
-<figure>
-<img src="images/idle-intepreter.png" alt="A screenshot of the IDLE intepreter"/>
-<figcaption>The IDLE interpreter</figcaption>
-</figure>
-
-<figure>
-<img src="images/idle-editor.png" alt="A screenshot of the IDLE editor"/>
-<figcaption>The IDLE editor</figcaption>
-</figure>
-
-<p>The interpreter is like a live wire. Python is sitting there, listening, waiting for you go give it a command. Once you give it a command, it will run it right away, then wait for the next command.</p>
-
-<p>The interpreter is like a bumbling minion. The second you tell it to do something, it runs off and does it! So, if you had ten things for it to do, you’re going to have to wait around until it comes back so you can give it your next command.</p>
-
-<p>The editor is used to create Python files, which allow you to write out a series of commands and save them. Once you’ve saved the Python file, you can run it,a nd the results will show up in the interpreter.</p>
-
-<p>The editor is like working with a better trained minion. This one, you can give a list of things to do, and it will only come back if it had trouble or if it’s done with all its tasks.</p>
-
-
-
-
-
-
-
-
-<section data-type="sect2" data-pdf-bookmark="Working in the Interpreter" id="_working_in_the_interpreter">
-<h2>Working in the Interpreter</h2>
-
-<p>Let’s play around in the interpreter for a bit. Try typing out the following:</p>
-
-
-<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="k">print</code> <code class="s">"Hello, world"</code></pre>
-
-
-<p>Hit enter. Python should have immediately printed out <em>Hello, world</em> on the next line. Your interpreter should look something like this:</p>
-
-
-<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="k">print</code> <code class="s">"Hello, world"</code>
-<code class="n">Hello</code><code class="p">,</code> <code class="n">world</code>
-<code class="o">&gt;&gt;&gt;</code></pre>
-
-
-<p>Those greater than signs (&gt;&gt;&gt;) mean that Python is ready for another command.</p>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section data-type="sect2" data-pdf-bookmark="Working in a file" id="_working_in_a_file">
-<h2>Working in a file</h2>
-
-<p>Let’s try saving some code into a file and running it. Open the text editor by going to File &gt; New. In the window, type the following:</p>
-
-
-<pre data-type="programlisting" data-code-language="python"><code class="k">print</code> <code class="s">"Hello, world"</code></pre>
-
-
-<p>Save the file as <em>hello.py</em>, but don’t close it. Instead, go to Run &gt; Run Module. Then go back to see what happened in the interpreter. You should see the following:</p>
-
-
-<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="o">=======</code> <code class="n">RESTART</code> <code class="o">=======</code>
-<code class="o">&gt;&gt;&gt;</code>
-<code class="n">Hello</code><code class="p">,</code> <code class="n">world</code>
-<code class="o">&gt;&gt;&gt;</code></pre>
-
-
-<p>You can run this file again and again, which is a definite advantage over just typing stuff in the interpreter! Usually, I use the shell for when I want to mess around and test stuff, and Python files for the lines of code I want to save.</p>
-</section>
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section data-type="sect1" data-pdf-bookmark="Working in the book!" id="_working_in_the_book">
-<h1>Working in the book!</h1>
-
-<p>Every once in a while, you might notice a box that looks a bit like a shell, or that has some code in it. If the box looks like the one below, you can actually change and run that code!</p>
-
-<p>TODO: Add an editor</p>
-
-<p>TODO: Explain how it works</p>
-
-
-
-
-
-
-
-
-<section data-type="sect2" data-pdf-bookmark="From the book to your computer" id="_from_the_book_to_your_computer">
-<h2>From the book to your computer</h2>
-
-<p>TODO: Once I sort this out</p>
-</section>
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section data-type="sect1" data-pdf-bookmark="Try this!" id="_try_this">
-<h1>Try this!</h1>
-
-<p>Try entering the following things into your interpreter:</p>
-
-
-<pre data-type="programlisting" data-code-language="python"><code class="o">&gt;&gt;&gt;</code> <code class="mi">5</code> <code class="o">+</code> <code class="mi">1</code>
-<code class="o">&gt;&gt;&gt;</code> <code class="n">a</code> <code class="o">=</code> <code class="mi">5</code>
-<code class="o">&gt;&gt;&gt;</code> <code class="k">print</code> <code class="n">a</code></pre>
-
-
-<p>Check out that last line of code. What did Python print out when you entered <code>print a</code>? Why do you think it printed out what it did?</p>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section data-type="sect1" data-pdf-bookmark="Notes for the adult" id="_notes_for_the_adult">
-<h1>Notes for the adult</h1>
-
-<p>In this lesson, we’re going to get Python installed and get the student familiar with working with IDLE.</p>
-
-<p>Even if you’re a Python developer, you’ve probably never touched IDLE. Most developers I chat with at conferences aren’t even aware that Python comes with an IDE! It’s a great environment for beginners, though, because it comes with some great stuff out of the box:</p>
 <ul>
-<li>
-<p>There is no messing with paths. Run it and go! If the student is on Windows, this can be a huge boon to them. So many students get stuck on paths!</p>
-</li>
-<li>
-<p>It has tab completion! Getting tab completion is easy enough for experts to set up, but can be intimidating for beginners.</p>
-</li>
-<li>
-<p>It comes with color coding. I know some old-school programmers hate it, but color coding can really help a beginner understand syntax and gives them a feeling of confidence as the code.</p>
-</li>
-<li>
-<p>It comes with Python. One install, and we’re ready to go!</p>
-</li>
-<li>
-<p>Drop down menus allow the student to explore what methods and attributes various objects have. Even the docs show up as you mouse over the various options!</p>
-</li>
+	<li>
+	<p>Testing for equality</p>
+	</li>
+	<li>
+	<p>Loops</p>
+	</li>
+	<li>
+	<p><code>if</code> statements</p>
+	</li>
+	<li>
+	<p>Getting input from the user</p>
+	</li>
+	<li>
+	<p>Converting strings into integers</p>
+	</li>
 </ul>
 
-<p>You probably will want to take a while to get familiar with IDLE, since that’s where I have the student work. Some of the stuff that might throw you:</p>
+<p>If you’re fuzzy on any of these topics, go back and check out their review videos.</p>
+</section>
+
+<section data-type="sect1" data-pdf-bookmark="A note for the mentor" id="_a_note_for_the_mentor">
+<h1>A note for the mentor</h1>
+
+<p>You’ve made it to the first project! You also might get to witness your first crisis of confidence in your student. Even a student who has effortlessly raced through each of the previous lesson’s examples might stumble the first time they have to put everything together. Don’t worry! This is common, and students become more confident as they go further in the book.</p>
+
+<p>Guessing games are great for adding personal twists, so once we’re done with the main requirements, feel free to help you student brainstorm ways to make the game even more interesting.</p>
+</section>
+
+<section data-type="sect1" data-pdf-bookmark="The plan!" id="_the_plan">
+<h1>The plan!</h1>
+
+<p>We’re going to make a two person guessing game. The first player will type in a number for the second person to guess. If the second person guesses right, then they win! Otherwise, they lose.</p>
+
+<p>Because we’re using two people, we have to make sure that the number the first player enters isn’t seen by the second player. A bunch of print statments should push that off the screen, though.</p>
+
+<p>Here are the components that you’ll have to use to make the basic game:</p>
+
 <ul>
-<li>
-<p>Pressing the up arrow moves your cursor up rather than bringing up a previous command.</p>
-</li>
-<li>
-<p>If your cursor is on a previously entered code, hitting enter will paste that code at your prompt.</p>
-</li>
-<li>
-<p>If you can’t seem to type, your cursor is probably just slightly off of where it needs to be. Hit enter or use the mouse to move the cursor to where it needs to be (which is right in front of the prompt).</p>
-</li>
-<li>
-<p>Also, if you create a block, IDLE will indent for you, but you won’t get the usual three dots indicating that you’re in a block. You’ll just be missing the usual prompt.</p>
-</li>
+	<li>
+	<p><code>input()</code> or <code>raw_input()</code></p>
+	</li>
+	<li>
+	<p>An <code>if</code> statement</p>
+	</li>
+	<li>
+	<p>Some sort of comparison</p>
+	</li>
+	<li>
+	<p><code>print</code></p>
+	</li>
 </ul>
 
-<p>If students get stuck here, it’s usually because they’re not used to being precise. Remind them to type in everything <strong>just</strong> as I’ve shown, down to the punctuation marks. Another place they get stuck is that they try to enter the prompt in as code, so watch out for that.</p>
-
-<p>Let them play around with the shell and such, printing out various things, until they’re comfortable enough to move on to the next lesson.</p>
+<p>Once you have your game running, make sure to run it at least twice: Once, where Player One guesses the number, and once where they don’t.</p>
 </section>
 
+<section data-type="sect1" data-pdf-bookmark="The basic game" id="_the_basic_game">
+<h1>The basic game</h1>
 
+<p>This is probably the most simple guessing game you can make. Two people and exactly one guess. Here’s what the code looks like:</p>
 
+<pre class="programlisting" data-code-language="python" data-executable="true" data-type="programlisting">
+<code class="n">secret_num</code> <code class="o">=</code> <code class="nb">input</code><code class="p">(</code><code class="s">"Player One, give me a number: "</code><code class="p">)</code>
 
+<code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">100</code><code class="p">):</code>
+    <code class="k">print</code> <code class="s">"Don't look, Player Two!"</code>
 
+<code class="n">guess</code> <code class="o">=</code> <code class="nb">input</code><code class="p">(</code><code class="s">"Player Two, what's your guess? "</code><code class="p">)</code>
 
+<code class="k">if</code> <code class="n">guess</code> <code class="o">==</code> <code class="n">secret_num</code><code class="p">:</code>
+    <code class="k">print</code> <code class="s">"You got it!"</code>
+<code class="k">else</code><code class="p">:</code>
+    <code class="k">print</code> <code class="s">"Sorry, you lose."</code></pre>
 
+<p>Basically, this code is:</p>
+
+<ul>
+	<li>
+	<p>Getting a secret number from Player One</p>
+	</li>
+	<li>
+	<p>Printing out a <strong>bunch</strong> of text to push that number off of the screen</p>
+	</li>
+	<li>
+	<p>Getting a guess from Player Two</p>
+	</li>
+	<li>
+	<p>Checking to see if the guess is equal to the secret number, and printing out a win / lose message</p>
+	</li>
+</ul>
+
+<p>This program is <em>okay</em>, but it’s not very exciting. Let’s add some more features!</p>
+
+<section data-type="sect2" data-pdf-bookmark="Try adding…" id="_try_adding">
+<h2>Try adding…</h2>
+
+<p>Here are some features you might want to add. You can add one, or you can add them all! Just make sure that you add them <em>one at a time</em>. It can be easy to get over-enthusiastic and add a bunch of stuff at once. However, it’s a good idea to run your program each time you add something new. That way, if you get an error, or your program doesn’t work as expected, you only have to look at few lines of code rather than dozens of lines.</p>
+
+<p>Suggested features:</p>
+
+<ul>
+	<li>
+	<p>Allow Player Two to guess more than once.</p>
+	</li>
+	<li>
+	<p>Allow the players to play another game once the game is over</p>
+	</li>
+	<li>
+	<p>Make sure that the number to guess isn’t bigger than ten</p>
+	</li>
+	<li>
+	<p>Give Player Two hints (like saying that the secret number is bigger or smaller than their guess)</p>
+	</li>
+	<li>
+	<p>Use <code>raw_input()</code> to make guessing a bit safer.</p>
+	</li>
+</ul>
 </section>
-        </div>
+</section>
+
+<section data-type="sect1" data-pdf-bookmark="The finished game" id="_the_finished_game">
+<h1>The finished game</h1>
+
+<p>Here’s my finished game, that builds off of the basic game and incorporates all of the suggested features.</p>
+
+<pre class="programlisting" data-code-language="python" data-executable="true" data-type="programlisting">
+<code class="n">max_num</code> <code class="o">=</code> <code class="mi">10</code>
+
+<code class="n">continue_game</code> <code class="o">=</code> <code class="s">"Y"</code>
+
+<code class="k">while</code> <code class="n">continue_game</code> <code class="o">==</code> <code class="s">"Y"</code><code class="p">:</code>
+    <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
+        <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player One, give me a number: "</code><code class="p">)</code>
+        <code class="k">try</code><code class="p">:</code>
+            <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">secret_num</code><code class="p">)</code>
+        <code class="k">except</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code>
+
+        <code class="k">if</code> <code class="n">secret_num</code> <code class="o">&gt;</code> <code class="n">max_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Sorry, the number needs to be less than"</code><code class="p">,</code> <code class="n">max_num</code>
+        <code class="k">else</code><code class="p">:</code>
+            <code class="k">break</code>
+
+    <code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">100</code><code class="p">):</code>
+        <code class="k">print</code> <code class="s">"Don't look, Player Two!"</code>
+
+    <code class="n">guess</code> <code class="o">=</code> <code class="s">""</code>
+
+    <code class="k">while</code> <code class="n">guess</code> <code class="o">!=</code> <code class="n">secret_num</code><code class="p">:</code>
+        <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
+            <code class="n">guess</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player Two, what's your guess? "</code><code class="p">)</code>
+            <code class="k">try</code><code class="p">:</code>
+                <code class="n">guess</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">guess</code><code class="p">)</code>
+                <code class="k">break</code>
+            <code class="k">except</code><code class="p">:</code>
+                <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code>
+
+        <code class="k">if</code> <code class="n">guess</code> <code class="o">==</code> <code class="n">secret_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"You got it!"</code>
+        <code class="k">elif</code> <code class="n">guess</code> <code class="o">&gt;</code> <code class="n">secret_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Hmm, that's too big..."</code>
+        <code class="k">else</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Nope, that's too small."</code>
+
+    <code class="n">c</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Want another game [Y/N]?"</code><code class="p">)</code>
+</pre>
+
+<p>Let’s go over what each chunk is doing. First, we set up some variables: The largest the secret number can be, and a variable that we’ll be using with the main loop of the game.</p>
+
+<pre class="programlisting " data-code-language="python" data-type="programlisting">
+<code class="n">max_num</code> <code class="o">=</code> <code class="mi">10</code>
+
+<code class="n">continue_game</code> <code class="o">=</code> <code class="s">"Y"</code></pre>
+
+<p>Next, we start the game. Our first goal is to get a good number to guess! We make Player One enter numbers until we get an integer that’s less than ten.</p>
+
+<pre class="programlisting " data-code-language="python" data-executable="true" data-type="programlisting">
+<code class="k">while</code> <code class="n">continue_game</code> <code class="o">==</code> <code class="s">"Y"</code><code class="p">:</code>
+    <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
+        <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player One, give me a number: "</code><code class="p">)</code>
+        <code class="k">try</code><code class="p">:</code>
+            <code class="n">secret_num</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">secret_num</code><code class="p">)</code>
+        <code class="k">except</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code>
+
+        <code class="k">if</code> <code class="n">secret_num</code> <code class="o">&gt;</code> <code class="n">max_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Sorry, the number needs to be less than"</code><code class="p">,</code> <code class="n">max_num</code>
+        <code class="k">else</code><code class="p">:</code>
+            <code class="k">break</code></pre>
+
+<p>Next, we spew out those print statements to push our secret number off the screen.</p>
+
+<pre class="programlisting" data-code-language="python" data-type="programlisting">
+    <code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">range</code><code class="p">(</code><code class="mi">100</code><code class="p">):</code>
+        <code class="k">print</code> <code class="s">"Don't look, Player Two!"</code></pre>
+
+<p>Now it’s time for Player Two to guess Player One’s number. First, we set up <code>guess</code> to hold an empty string, so <code>guess != secret_num</code> will work properly (if we don’t set up <code>guess</code>, Python will give us an error).</p>
+
+<p>We need to get a good number out of Player Two, so once again, we keep asking Player Two for numbers until they give us an integer.</p>
+
+<pre class="programlisting " data-code-language="python" data-type="programlisting">
+    <code class="n">guess</code> <code class="o">=</code> <code class="s">""</code>
+
+    <code class="k">while</code> <code class="n">guess</code> <code class="o">!=</code> <code class="n">secret_num</code><code class="p">:</code>
+        <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
+            <code class="n">guess</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Player Two, what's your guess? "</code><code class="p">)</code>
+            <code class="k">try</code><code class="p">:</code>
+                <code class="n">guess</code> <code class="o">=</code> <code class="nb">int</code><code class="p">(</code><code class="n">guess</code><code class="p">)</code>
+                <code class="k">break</code>
+            <code class="k">except</code><code class="p">:</code>
+                <code class="k">print</code> <code class="s">"Sorry, I really need a number"</code></pre>
+
+<p>Once we get a good number, it’s time to see if the two numbers are the same, or if Player Two’s number was too big or too small. If the guess isn’t the same as the secret number, we’ll go back to <code>while guess != secret_num:</code> and get another number out of Player Two.</p>
+
+<pre class="programlisting " data-code-language="python" data-type="programlisting">
+        <code class="k">if</code> <code class="n">guess</code> <code class="o">==</code> <code class="n">secret_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"You got it!"</code>
+        <code class="k">elif</code> <code class="n">guess</code> <code class="o">&gt;</code> <code class="n">secret_num</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Hmm, that's too big..."</code>
+        <code class="k">else</code><code class="p">:</code>
+            <code class="k">print</code> <code class="s">"Nope, that's too small."</code></pre>
+
+<p>Finally, if Player Two <em>does</em> guess the secret number, we ask if they want to play again. If they enter a capital <em>Y</em>, then we start the game over. If they enter anything else, the game ends.</p>
+
+<pre class="programlisting" data-code-language="python" data-executable="true" data-type="programlisting">
+    <code class="n">c</code> <code class="o">=</code> <code class="nb">raw_input</code><code class="p">(</code><code class="s">"Want another game [Y/N]?"</code><code class="p">)</code></pre>
+
+<section data-type="sect2" data-pdf-bookmark="My code doesn’t look like that!" id="_my_code_doesn_t_look_like_that">
+<h2>My code doesn’t look like that!</h2>
+
+<p>That’s okay! Your code should <em>work</em> the same. Coding isn’t like doing math, where there’s a limited number of ways to get to the right answer. If you have five developers code the same program, they’ll often do it five different ways.</p>
+
+<p>What’s more important is to understand <em>why</em> my code looks different. Did I do something that was simpler, or did I check for something that you forgot about (like bad input)? Did I simply do something different? Reading other people’s code is a great way to learn tricks that makes your code easier to read, maintain, and run!</p>
+</section>
+</section>
+</section>
+            <ul class="page-navigation">
+              <li><a href="ch02.html">Previous</a></li>
+              <li/>
+            </ul>
+          </section>
+        </section>
       </div>
-    </div>
-  
-    <div class="container">
-	<div class="row">
-	  <div class="pagination">
-	      <ul>
-	        <li class="prev"><span class="fa fa-chevron-left"/> <a href="ch02.html">Previous</a></li>
-	        <li class="next"><a href="ch04.html">Next</a> <span class="fa fa-chevron-right"/></li>
-	      </ul>
-	  </div>       
-	</div>
-    </div>
-
-    <div class="container">
-       <div class="row">
-          <div class="col-md-12 disqus">
-	     <div id="disqus_thread"/>
-	   </div>
-       </div>
-    </div>
- 
-    <div class="footer">
-      <footer>
-        <p>© O'Reilly Media, 2014</p>
-      </footer>
-    </div>
-
   </body>
-
 </html>
